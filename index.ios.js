@@ -10,10 +10,12 @@ import {
   StyleSheet,
   Text,
   View,
-  ScrollView
+  ScrollView,
+  Image
 } from 'react-native';
 import Game from './Game'
 import Header from './Header'
+import NavBar from './NavBar'
 
 
 export default class TrialProject extends Component {
@@ -42,17 +44,16 @@ export default class TrialProject extends Component {
     return (
        <View>
            <View style = {styles.head}>
-             <Text style = {styles.title}>
-               Triton Athletics
-             </Text>
-           </View>
-           <View>
+             <Header/>
            </View>
           <ScrollView>
           <Game
             gamesList = {this.state.gamesList}
             />
         </ScrollView>
+          <View >
+            <NavBar/>
+          </View>
         </View>
     );
   }

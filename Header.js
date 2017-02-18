@@ -27,15 +27,18 @@ export default class Header extends Component{
 
 const styles = StyleSheet.create({
   head: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#00008b',
+    width: window.width,
+    height: 80,
+    backgroundColor: '#00008b'
   },
-  title:{
+  title: {
   justifyContent: 'center',
-  fontSize: 40,
+  color: 'yellow',
+  fontSize: 35,
   fontWeight: 'bold',
+  fontFamily: "Didot"
   }
 });
 
