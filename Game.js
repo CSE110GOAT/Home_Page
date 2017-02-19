@@ -10,9 +10,11 @@ import {
 
 export default Game = (props) => {
   const createItem = (item) => (
-      <Text key = {item.score} style = {styles.item}>
-        {item.team1}      {item.score1} {item.score2}      {item.team2}
+      <View>
+      <Text key = {item.sport} style = {styles.item}>
+        {item.sport} | {item.team1} {item.score1} {item.score2} {item.team2}
       </Text>
+      </View>
       )
   return(
     <View style = {styles.container}>

@@ -11,7 +11,7 @@ export default class Header extends Component{
     constructor(){
     super()
     this.state = {
-      banner: 'UCSD Tritons'
+      banner: 'Triton Athletics'
       }
     }
     render(){
