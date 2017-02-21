@@ -5,24 +5,30 @@ import {
   StyleSheet,
   Text,
   View,
-  ScrollView
+  ScrollView,
+  Image
 } from 'react-native'
 
-export default Game = (props) => {
-  const createItem = (item) => (
-      <View>
-      <Text key = {item.sport} style = {styles.item}>
-        {item.sport} | {item.team1} {item.score1} {item.score2} {item.team2}
-      </Text>
+export default class Game extends Component {
+  constructor(){
+    super()
+    this.state = {
+        sport: "Basketball",
+        team1: "UCSD",
+        score1: 21,
+        team2: "USC",
+        score2: 0
+    }
+  }
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.item}> {this.state.sport} {"\n"} {this.state.team1}
+               {this.state.score1} {this.state.score2} {this.state.team2}
+        </Text>
       </View>
-      )
-  return(
-    <View style = {styles.container}>
-        <ScrollView>
-          {props.gamesList.map(createItem)}
-        </ScrollView>
-     </View>
-  )
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -40,6 +46,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     textAlign:'center'
+  },
+  logo:{
+    height:30,
+    width: 30
   }
 });
 

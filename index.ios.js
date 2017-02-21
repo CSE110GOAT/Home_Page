@@ -22,22 +22,8 @@ export default class TrialProject extends Component {
   constructor(){
     super()
     this.state = {
-      gamesList: [
-        {'sport':"Soccer",'team1':'UCSD','score1':'100','team2':'UCB','score2':'0'},
-        {'sport':"Basketball",'team1':'UCSD','score1':'100','team2':'UCLA','score2':'0'},
-        {'sport':"Swimming",'team1':'UCSD','score1':'100','team2':'UCSB','score2':'0'},
-        {'sport':"Basket Weaving",'team1':'UCSD','score1':'100','team2':'UCD','score2':'0'},
-        {'sport':"Gymnastics",'team1':'UCSD','score1':'100','team2':'UCSC','score2':'0'},
-        {'sport':"Hot Dog Eating",'team1':'UCSD','score1':'100','team2':'UCI','score2':'0'},
-        {'sport':"Water Polo",'team1':'UCSD','score1':'100','team2':'UCM','score2':'0'},
-        {'sport':"Mathematics",'team1':'UCSD','score1':'100','team2':'UCR','score2':'-1'},
-        {'sport':"Competitive CS",'team1':'UCSD','score1':'100','team2':'UCSF','score2':'-1'},
-        {'sport':"Basketball",'team1':'UCSD','score1':'100','team2':'USC','score2':'-1'},
-        {'sport':"Soccer",'team1':'UCSD','score1':'100','team2':'CalTech','score2':'-1'},
-        {'sport':"Tennis",'team1':'UCSD','score1':'100','team2':'Stanford','score2':'-1'},
-        {'sport':"Cycling",'team1':'UCSD','score1':'100','team2':'SDSU','score2':'-1'},
-        {'sport':"Croquet",'team1':'UCSD','score1':'100','team2':'USD','score2':'-1'},
-      ]
+      numGames: 0,
+      onStart: true
     }
   }
   render() {
@@ -47,10 +33,22 @@ export default class TrialProject extends Component {
              <Header/>
            </View>
           <ScrollView>
-          <Game
-            gamesList = {this.state.gamesList}
-            />
-        </ScrollView>
+            <Game/>
+            <Game/>
+            <Game/>
+            <Game/>
+            <Game/>
+            <Game/>
+            <Game/>
+            <Game/>
+            <Game/>
+            <Game/>
+            <Game/>
+            <Game/>
+            <Game/>
+            <Game/>
+
+          </ScrollView>
           <View>
             <NavBar/>
           </View>

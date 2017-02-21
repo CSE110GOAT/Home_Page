@@ -1,59 +1,53 @@
 'use strict';
 
 import React, { Component } from 'react'
+import ReactNative from 'react-native'
 import {
   AppRegistry,
   StyleSheet,
   Text,
   View,
-  Image
+  Image,
+  TabBarIOS
 } from 'react-native'
 
 const Dimensions = require('Dimensions');
 const window = Dimensions.get('window');
 
 export default class NavBar extends Component{
-  constructor(){
-    super()
-  }
-  render() {
+  state = {
+      selectedTab : 'homePage',
+      notifCount: 0,
+      presses: 0,
+    };
+   render() {
     return (
-      <View style = {styles.bar}>
-        <View style = {styles.home_icon}>
-          <Image
-          source = {require('./home_bar_icons/home.png')}
-          style = {styles.home_pic}
-          />
-        </View>
+      <TabBarIOS
+        barTintColor = "snow"
+        tintColor= "snow"
+        unselectedItemTintColor = "black"
+        translucent={true}>
 
-        <View style = {styles.home_icon}>
-          <Image
-          source = {require('./home_bar_icons/magnifying_glass.png')}
-          style = {styles.home_pic}
-          />
-        </View>
+        <TabBarIOS.Item
+          icon = {require('./home_bar_icons/home.png')}
+          renderAsOriginal
+          selected = {this.state.selectedTab === 'homePage'}
+          onPress ={()=> {
+              this.setState({
+                selectedTab:'homePage',
+              });
+           }}>
+        </TabBarIOS.Item>
 
-      <View style = {styles.home_icon}>
-        <Image
-        source = {require('./home_bar_icons/social.png')}
-        style = {styles.home_pic}
-        />
-      </View>
-      <View style = {styles.home_icon}>
-        <Image
-        source = {require('./home_bar_icons/news.png')}
-        style = {styles.home_pic}
-        />
-      </View>
-      </View>
+      </TabBarIOS>
     );
   }
 }
 
 const styles = StyleSheet.create({
   bar:{
-    flex: 1,
     flexDirection: 'row',
+    flex: 1,
     justifyContent: 'space-around',
     alignItems: 'flex-end'
   },
