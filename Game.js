@@ -22,10 +22,22 @@ export default class Game extends Component {
   }
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.item}> {this.state.sport} {"\n"} {this.state.team1}
-               {this.state.score1} {this.state.score2} {this.state.team2}
-        </Text>
+      <View>
+        <Text style={styles.sport}> --{this.state.sport}-- </Text>
+        <View style={styles.container}>
+          <View style={styles.logo_item}>
+            <Image source={require('./home_bar_icons/home.png')} style={styles.logo}/>
+            <Text>{"\t\t"}</Text>
+          </View>
+          <View>
+            <Text style={styles.item}><Image source={require('./home_bar_icons/home.png')} style={styles.sport_image}/> {this.state.team1}  {this.state.score1}{"\t"} {this.state.score2}  {this.state.team2}  <Image source={require('./home_bar_icons/home.png')} style={styles.sport_image}/></Text>
+          </View>
+          <View>
+            <Text style={styles.time}>{"\n"}       00:00</Text>
+            <Text style={styles.time}>       1st</Text>
+            <Text style={styles.time}>{"\t"}(G.M?)</Text>
+          </View>
+        </View>
       </View>
     );
   }
@@ -34,22 +46,49 @@ export default class Game extends Component {
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    backgroundColor: 'snow',
-    justifyContent: 'center'
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    borderColor: 'grey',
+    borderWidth: 2
+  },
+  logo_item:{
+    alignItems: 'center'
   },
   item:{
-    fontFamily:"Helvetica",
-    padding: 15,
-    height:40,
-    borderColor: 'navy',
-    borderWidth:1,
+    fontFamily:"Menlo",
+    padding: 10,
+    borderWidth: 0.5,
+    borderColor: 'grey',
     justifyContent: 'center',
     alignItems: 'center',
+    height: 62,
     textAlign:'center'
   },
-  logo:{
-    height:30,
-    width: 30
+  sport:{
+    fontFamily: 'Didot',
+    backgroundColor: 'gold',
+    fontWeight: 'bold',
+    borderColor: 'navy'
+  },
+  sport_image: {
+    width: 25,
+    height: 50,
+    alignItems: 'center',
+    marginTop: 15
+  },
+  time: {
+    fontSize: 10,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
+  logo: {
+    width: 35,
+    height: 35,
+    marginTop: 10,
+    marginRight:15,
+    marginLeft: 15,
+    justifyContent: 'center'
   }
 });
 
