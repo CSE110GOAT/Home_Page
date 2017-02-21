@@ -45,8 +45,6 @@ export default class TrialProject extends Component {
             <Game/>
             <Game/>
             <Game/>
-            <Game/>
-            <Game/>
 
           </ScrollView>
           <View>
