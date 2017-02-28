@@ -19,6 +19,7 @@ export default class TabViewExample extends Component {
     routes: [
       { key: '1', title: 'STATS' },
       { key: '2', title: 'NOTES' },
+      { key: '3', title: 'MAP'},
     ],
   };
 
@@ -42,6 +43,12 @@ export default class TabViewExample extends Component {
       return <View style={[ styles.page, { backgroundColor: '#673ab7' } ]}>
           <ScrollView>
             <Text> This is where the notes will go </Text>
+          </ScrollView>
+      </View>;
+      case '3':
+      return <View style={[ styles.page, { backgroundColor: 'white' } ]}>
+          <ScrollView>
+            <Text> This is where the map will go </Text>
           </ScrollView>
       </View>;
     default:

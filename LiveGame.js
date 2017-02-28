@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     borderColor: 'grey',
-    borderWidth: 7
+    borderWidth: 4
   },
   logo_item:{
     alignItems: 'center'
@@ -67,7 +67,10 @@ const styles = StyleSheet.create({
     fontFamily: 'Didot',
     backgroundColor: 'gold',
     fontWeight: 'bold',
-    borderColor: 'navy'
+    borderColor: 'navy',
+    padding: 10,
+    fontSize: 20,
+    textAlign: 'center'
   },
   sport_image: {
     width: 25,

@@ -5,7 +5,8 @@ import {
   Text,
   View,
   ScrollView,
-  Image
+  Image,
+  TouchableHighlight
 } from 'react-native';
 import Header from './Header'
 import LiveGame from './LiveGame'
@@ -17,17 +18,28 @@ export default class Indiv extends Component {
     super()
 
   }
+
+  navBack() {
+    this.props.navigator.pop()
+  }
+
   render() {
     return (
       <View style = {styles.indivcontainer}>
-        <View>
-          <Header/>
-        </View>
+        <TouchableHighlight onPress={this.navBack.bind(this)}>
+          <View>
+            <Header/>
+          </View>
+        </TouchableHighlight>
         <View style = {styles.game}>
           <LiveGame/>
         </View>
         <Status/>
+        <View>
+          <NavBar/>
+          </View>
       </View>
+
     );
   }
 }

@@ -26,11 +26,11 @@ export default class Game extends Component {
         <Text style={styles.sport}> --{this.state.sport}-- </Text>
         <View style={styles.container}>
           <View style={styles.logo_item}>
-            <Image source={require('./home_bar_icons/home.png')} style={styles.logo}/>
+            <Image source={require('./basketball.png')} style={styles.logo}/>
             <Text>{"\t\t"}</Text>
           </View>
           <View>
-            <Text style={styles.item}><Image source={require('./home_bar_icons/home.png')} style={styles.sport_image}/> {this.state.team1}  {this.state.score1}{"\t"} {this.state.score2}  {this.state.team2}  <Image source={require('./home_bar_icons/home.png')} style={styles.sport_image}/></Text>
+            <Text style={styles.item}><Image source={require('./school_logos/triton.png')} style={styles.sport_image}/> {this.state.team1}  {this.state.score1}{"\t"} {this.state.score2}  {this.state.team2}  <Image source={require('./school_logos/usc.png')} style={styles.sport_image}/></Text>
           </View>
           <View>
             <Text style={styles.time}>{"\n"}       00:00</Text>

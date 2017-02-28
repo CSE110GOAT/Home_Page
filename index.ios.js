@@ -11,11 +11,15 @@ import {
   Text,
   View,
   ScrollView,
-  Image
+  Image,
+  TouchableHighlight,
+  Navigator
 } from 'react-native';
+import MyScene from './MyScene'
 import Game from './Game'
 import Header from './Header'
 import NavBar from './NavBar'
+import Indiv from './Indiv'
 
 
 export default class TrialProject extends Component {
@@ -26,32 +30,23 @@ export default class TrialProject extends Component {
       onStart: true
     }
   }
+
+
   render() {
     return (
-       <View>
-           <View style = {styles.head}>
-             <Header/>
-           </View>
-          <ScrollView>
-            <Game/>
-            <Game/>
-            <Game/>
-            <Game/>
-            <Game/>
-            <Game/>
-            <Game/>
-            <Game/>
-            <Game/>
-            <Game/>
-            <Game/>
-            <Game/>
-
-          </ScrollView>
-          <View>
-            <NavBar/>
-          </View>
-        </View>
-    );
+      <Navigator
+        initialRoute={{id: 'first'}}
+        renderScene={(route, navigator) => {
+          _navigator = navigator;
+          switch (route.id) {
+            case 'first':
+              return (<MyScene navigator={navigator} title="first"/>);
+            case 'second':
+              return (<Indiv navigator={navigator} title="second" />);
+          }
+        }
+      }
+    />);
   }
 }
 
@@ -70,10 +65,18 @@ const styles = StyleSheet.create({
     height: 80,
     backgroundColor: '#00008b'
   },
-  title:{
+
+  time: {
     justifyContent: 'center',
-    color: 'yellow',
-    fontSize: 35,
+    alignItems: 'center',
+    width: window.width,
+    height: 40,
+    backgroundColor: 'white'
+  },
+  title: {
+    justifyContent: 'center',
+    color: 'black',
+    fontSize: 15,
     fontWeight: 'bold',
     fontFamily: "Didot"
   }

@@ -7,7 +7,8 @@ import {
   ScrollView,
   Image,
   TouchableHighlight,
-  Navigator
+  Navigator,
+  TabBarIOS
 } from 'react-native';
 
 import Game from './Game'
@@ -62,7 +63,7 @@ export default class MyScene extends Component {
              <Game/>
            </ScrollView>
            <View>
-             <NavBar/>
+            <NavBar/>
            </View>
          </View>
       </View>
@@ -101,3 +102,5 @@ const styles = StyleSheet.create({
     fontFamily: "Didot"
   }
 });
+
+AppRegistry.registerComponent('MyScene', () => MyScene);
