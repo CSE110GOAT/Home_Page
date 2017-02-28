@@ -11,88 +11,49 @@ import {
   TabBarIOS
 } from 'react-native'
 
+import Icon from 'react-native-vector-icons/Ionicons';
+const myIcon = (<Icon name="rocket" size={30} color="#900" />)
+
+
 const Dimensions = require('Dimensions');
 const window = Dimensions.get('window');
 
+
 export default class NavBar extends Component{
-  state = {
-      selectedTab: 'homePage',
-      notifCount: 0,
-      presses: 0,
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      selectedTab: 'home',
     };
-
-    _function = () => {
-      return (
-        <View></View>
-      );
-    };
-
-
+  }
    render() {
     return (
       <TabBarIOS
         barTintColor = "white"
         tintColor= "black"
         unselectedItemTintColor = "black"
-        style = {styles.bar}
+        translucent={true}
+        itemPositioning = 'fill'
         >
+        <Icon.TabBarItemIOS
+          iconName="ios-home-outline"
+          selectedIconName = "ios-home"
 
-        <TabBarIOS.Item
-        style={styles.home_pic}
-        icon = {require('./home_bar_icons/home.png')}
-        renderAsOriginal
-        selected = {this.state.selectedTab === 'homePage'}
-        onPress ={()=> {
-            this.setState({
-              selectedTab:'homePage',
-            });
-         }}>
-         {this._function()}
-        </TabBarIOS.Item>
-
-
-        <TabBarIOS.Item
-        style={styles.home_pic}
-        icon = {require('./home_bar_icons/magnifying_glass.png')}
-        renderAsOriginal
-        selected = {this.state.selectedTab === 'explorePage'}
-        onPress ={()=> {
-            this.setState({
-              selectedTab:'explorePage',
-            });
-         }}>
-        {this._function()}
-        </TabBarIOS.Item>
-
-
-
-        <TabBarIOS.Item
-        style={styles.home_pic}
-        icon = {require('./home_bar_icons/news.png')}
-        renderAsOriginal
-        selected = {this.state.selectedTab === 'newsPage'}
-        onPress ={()=> {
-            this.setState({
-              selectedTab:'newsPage',
-            });
-         }}>
-         {this._function()}
-        </TabBarIOS.Item>
-
-
-        <TabBarIOS.Item
-        style={styles.home_pic}
-        icon = {require('./home_bar_icons/social.png')}
-        renderAsOriginal
-        selected = {this.state.selectedTab === 'socialPage'}
-        onPress ={()=> {
-            this.setState({
-              selectedTab:'socialPage',
-            });
-         }}>
-         {this._function()}
-        </TabBarIOS.Item>
-      </TabBarIOS>
+          />
+          <Icon.TabBarItemIOS
+            iconName="ios-basketball-outline"
+            selectedIconName = "ios-basketball"
+            />
+            <Icon.TabBarItemIOS
+             iconName="ios-people-outline"
+             selectedIconName = "ios-people"
+             />
+          <Icon.TabBarItemIOS
+            iconName="ios-information-circle-outline"
+            selectedIconName = "ios-information-circle"
+            />
+        </TabBarIOS>
     );
   }
 }
@@ -102,32 +63,23 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flex: 1,
     justifyContent: 'space-around',
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
+    height: window.width/3
   },
   home_icon:{
-    width: window.width/4,
-    height: window.width/4 - 60,
+    width: 50,
+    height: 50,
     backgroundColor: 'white',
     borderColor: 'gainsboro',
     borderTopWidth: 0.5,
     borderRightWidth: 0,
     borderLeftWidth: 0,
     borderBottomWidth: 0,
-    justifyContent: 'center'
   },
   home_pic:{
-    width: window.width/4 - 60,
-    height: window.width/4 - 60,
-    alignSelf: 'center'
-  },
-tabContent: {
-  flex: 1,
-  alignItems: 'center',
-},
-tabText: {
-  color: 'blue',
-  margin: 50,
-}
+    width: 20,
+    height: 20
+    }
 });
 
 AppRegistry.registerComponent('NavBar', () => NavBar);
