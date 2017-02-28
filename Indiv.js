@@ -26,9 +26,7 @@ export default class Indiv extends Component {
         <View style = {styles.game}>
           <LiveGame/>
         </View>
-        <View>
-          <Status/>
-        </View>
+        <Status/>
       </View>
     );
   }
