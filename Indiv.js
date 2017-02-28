@@ -9,8 +9,9 @@ import {
   TouchableHighlight
 } from 'react-native';
 import Header from './Header'
-import LiveGame from './LiveGame'
+import PastGame from './PastGame'
 import Status from './Status'
+import NavBar from './NavBar'
 
 
 export default class Indiv extends Component {
@@ -32,7 +33,7 @@ export default class Indiv extends Component {
           </View>
         </TouchableHighlight>
         <View style = {styles.game}>
-          <LiveGame/>
+          <PastGame/>
         </View>
         <Status/>
         <View>

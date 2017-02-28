@@ -27,8 +27,7 @@ export default class MyScene extends Component {
 
   render() {
     return (
-      <View>
-        <View>
+        <View style={styles.container}>
             <View style = {styles.head}>
               <Header/>
             </View>
@@ -66,7 +65,6 @@ export default class MyScene extends Component {
             <NavBar/>
            </View>
          </View>
-      </View>
     )
   }
 }
@@ -75,8 +73,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'blue'
+    backgroundColor: 'white'
 
   },
   head: {
