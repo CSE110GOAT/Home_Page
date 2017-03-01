@@ -8,14 +8,17 @@ import {
   Image,
   TouchableHighlight,
   Navigator,
-  TabBarIOS
+  TabBarIOS,
+  TouchableOpacity
 } from 'react-native';
+
 
 import Game from './Game'
 import Header from './Header'
 import NavBar from './NavBar'
 import Indiv from './Indiv'
-import LiveGame from './LiveGame'
+import FutureGame from './FutureGame'
+import PastGame from './PastGame'
 
 export default class MyScene extends Component {
 
@@ -28,20 +31,18 @@ export default class MyScene extends Component {
   render() {
     return (
         <View style={styles.container}>
-            <View style = {styles.head}>
-              <Header/>
-            </View>
-           <ScrollView>
+           <Header/>
+           <ScrollView style={styles.scroll}>
              <View style = {styles.time}>
                <Text style={styles.title}>
                  --Today--
                </Text>
              </View>
-             <TouchableHighlight onPress={this.navIndiv.bind(this)}>
+             <TouchableOpacity activeOpacity={1} onPress={this.navIndiv.bind(this)}>
               <View>
                 <Game/>
               </View>
-             </TouchableHighlight>
+             </TouchableOpacity>
              <Game/>
              <Game/>
              <Game/>
@@ -54,16 +55,14 @@ export default class MyScene extends Component {
                  --Upcoming--
                </Text>
              </View>
-
              <Game/>
              <Game/>
              <Game/>
              <Game/>
              <Game/>
            </ScrollView>
-           <View>
-            <NavBar/>
-           </View>
+
+
          </View>
     )
   }
@@ -72,7 +71,7 @@ export default class MyScene extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    flexDirection: 'column',
     backgroundColor: 'white'
 
   },

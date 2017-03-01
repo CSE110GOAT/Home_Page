@@ -33,7 +33,7 @@ export default class PastGame extends Game {
         <View style = {styles.ScoreContainer}>
 
           <Text style = {styles.ScoreText}>
-          <Image source={require('./school_logos/Ucsdtritions.png')}  style = {styles.logo}/>
+          <Image source={require('./school_logos/triton.png')}  style = {styles.logo}/>
           {"\t"}{this.state.team1} {this.state.score1} {"\t"}{this.state.score2} {this.state.team2}{"\t"}
           {"\t"}<Image source={require('./school_logos/usc.png')}  style = {styles.logo}/>
         </Text>

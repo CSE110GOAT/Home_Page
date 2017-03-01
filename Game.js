@@ -50,7 +50,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     borderColor: 'grey',
-    borderWidth: 2
+    borderWidth: 2,
+    borderLeftColor: 'blue',
+    borderLeftWidth: 10
   },
   logo_item:{
     alignItems: 'center'

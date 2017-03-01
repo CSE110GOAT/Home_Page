@@ -20,6 +20,8 @@ import Game from './Game'
 import Header from './Header'
 import NavBar from './NavBar'
 import Indiv from './Indiv'
+import HomeNav from './HomeNav'
+import Explore from './Explore'
 
 
 export default class TrialProject extends Component {
@@ -34,52 +36,9 @@ export default class TrialProject extends Component {
 
   render() {
     return (
-      <Navigator
-        initialRoute={{id: 'first'}}
-        renderScene={(route, navigator) => {
-          _navigator = navigator;
-          switch (route.id) {
-            case 'first':
-              return (<MyScene navigator={navigator} title="first"/>);
-            case 'second':
-              return (<Indiv navigator={navigator} title="second" />);
-          }
-        }
-      }
-    />);
+    <NavBar/> )
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'blue'
-
-  },
-  head: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: window.width,
-    height: 80,
-    backgroundColor: '#00008b'
-  },
-
-  time: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: window.width,
-    height: 40,
-    backgroundColor: 'white'
-  },
-  title: {
-    justifyContent: 'center',
-    color: 'black',
-    fontSize: 15,
-    fontWeight: 'bold',
-    fontFamily: "Didot"
-  }
-});
 
 AppRegistry.registerComponent('TrialProject', () => TrialProject);

@@ -6,7 +6,8 @@ import {
   View,
   ScrollView,
   Image,
-  TouchableHighlight
+  TouchableHighlight,
+  TouchableOpacity
 } from 'react-native';
 import Header from './Header'
 import PastGame from './PastGame'
@@ -27,18 +28,15 @@ export default class Indiv extends Component {
   render() {
     return (
       <View style = {styles.indivcontainer}>
-        <TouchableHighlight onPress={this.navBack.bind(this)}>
+        <TouchableOpacity activeOpacity={1} onPress={this.navBack.bind(this)}>
           <View>
             <Header/>
           </View>
-        </TouchableHighlight>
+        </TouchableOpacity>
         <View style = {styles.game}>
           <PastGame/>
         </View>
         <Status/>
-        <View>
-          <NavBar/>
-          </View>
       </View>
 
     );

@@ -4,12 +4,14 @@ import { TabViewAnimated, TabBar } from 'react-native-tab-view';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white'
   },
   page: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+
   },
 });
 
@@ -28,7 +30,7 @@ export default class TabViewExample extends Component {
   };
 
   _renderHeader = (props) => {
-    return <TabBar {...props} />;
+    return <TabBar  {...props} />;
   };
 
   _renderScene = ({ route }) => {
