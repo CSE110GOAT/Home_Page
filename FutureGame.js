@@ -8,9 +8,10 @@ import {
   Image
 } from 'react-native'
 import Game from './Game'
+import NavFuture from './NavFuture'
+import FutureGamePreview from './FutureGamePreview'
 
-
-export default class PastGame extends Game {
+export default class FutureGame extends Component {
   constructor(){
     super()
     /*
@@ -44,9 +45,6 @@ export default class PastGame extends Game {
 
         <View style={styles.InfoContainer}>
           <View style = {{borderColor:"grey",borderBottomWidth:1}}>
-            <Text style={{fontWeight:'bold', fontSize:16, textAlign:'center'}}>
-              Schedule
-            </Text>
           </View>
         </View>
       </View>
@@ -101,4 +99,4 @@ const styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('PastGame', () => PastGame);
+AppRegistry.registerComponent('FutureGame', () => FutureGame);

@@ -19,12 +19,19 @@ import NavBar from './NavBar'
 import Indiv from './Indiv'
 import FutureGame from './FutureGame'
 import PastGame from './PastGame'
+import FutureGamePreview from './FutureGamePreview'
 
 export default class MyScene extends Component {
 
   navIndiv() {
     this.props.navigator.push({
       id: 'second'
+    })
+  }
+
+  NavFuture() {
+    this.props.navigator.push({
+      id: 'third'
     })
   }
 
@@ -41,25 +48,29 @@ export default class MyScene extends Component {
              <TouchableOpacity activeOpacity={1} onPress={this.navIndiv.bind(this)}>
               <View>
                 <Game/>
+                <Game/>
+                <Game/>
+                <Game/>
+                <Game/>
+                <Game/>
+                <Game/>
               </View>
              </TouchableOpacity>
-             <Game/>
-             <Game/>
-             <Game/>
-             <Game/>
-             <Game/>
-             <Game/>
+      
 
              <View style = {styles.time}>
                <Text style={styles.title}>
                  --Upcoming--
                </Text>
              </View>
-             <Game/>
-             <Game/>
-             <Game/>
-             <Game/>
-             <Game/>
+             <TouchableOpacity activeOpacity={1} onPress={this.NavFuture.bind(this)}>
+              <FutureGamePreview/>
+              <FutureGamePreview/>
+              <FutureGamePreview/>
+              <FutureGamePreview/>
+              <FutureGamePreview/>
+              </TouchableOpacity>
+
            </ScrollView>
 
 

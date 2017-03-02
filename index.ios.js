@@ -22,7 +22,9 @@ import NavBar from './NavBar'
 import Indiv from './Indiv'
 import HomeNav from './HomeNav'
 import Explore from './Explore'
-
+import NavFuture from './NavFuture'
+import FutureGame from './FutureGame'
+import FutureGamePreview from './FutureGamePreview'
 
 export default class TrialProject extends Component {
   constructor(){
