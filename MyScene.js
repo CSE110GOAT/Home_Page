@@ -20,6 +20,7 @@ import Indiv from './Indiv'
 import FutureGame from './FutureGame'
 import PastGame from './PastGame'
 import FutureGamePreview from './FutureGamePreview'
+import TournamentPreview from './TournamentPreview'
 
 export default class MyScene extends Component {
 
@@ -71,8 +72,10 @@ export default class MyScene extends Component {
                 <FutureGamePreview/>
                 <FutureGamePreview/>
                 <Text>{"\n"}</Text>
-                <FutureGamePreview/>
-              </View>
+                <TournamentPreview/>
+                <TournamentPreview/>
+                <TournamentPreview/>                
+                </View>
               </TouchableOpacity>
            </ScrollView>
 
