@@ -22,6 +22,7 @@ import Game from './Game'
 import Header from './Header'
 import NavBar from './NavBar'
 import Indiv from './Indiv'
+import NavFuture from './NavFuture'
 
 
 export default class HomeNav extends Component {
@@ -45,6 +46,8 @@ export default class HomeNav extends Component {
               return (<MyScene navigator={navigator} title="first"/>);
             case 'second':
               return (<Indiv navigator={navigator} title="second" />);
+            case 'third':
+              return (<NavFuture navigator={navigator} title="third"/>);
           }
         }
       }

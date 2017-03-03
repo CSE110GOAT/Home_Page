@@ -37,10 +37,8 @@ export default class NavBar extends Component{
       <TabBarIOS
         barTintColor = "white"
         tintColor= "black"
-        unselectedTintColor='yellow'
-        unselectedItemTintColor = "red"
-        >
-
+        unselectedItemTintColor = "black"
+         >
           <Icon.TabBarItemIOS
             iconName="ios-home-outline"
             selectedIconName = "ios-home"

@@ -33,8 +33,8 @@ export default class NavFuture extends Component {
             <Header/>
           </View>
         </TouchableOpacity>
-        <View>
-          <FutureGame/>
+         <View>
+         <FutureGame/>
         </View>
         <Status/>
       </View>
@@ -56,3 +56,5 @@ const styles = StyleSheet.create({
 });
 
 AppRegistry.registerComponent('NavFuture', () => NavFuture);
+
+

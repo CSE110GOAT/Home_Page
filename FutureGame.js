@@ -10,11 +10,12 @@ import {
 import Game from './Game'
 import NavFuture from './NavFuture'
 import FutureGamePreview from './FutureGamePreview'
+import Status from './Status'
 
 export default class FutureGame extends Component {
   constructor(){
     super()
-    /*
+    
     this.state = {
       sport: "Basketball",
       team1: "UCSD",
@@ -22,7 +23,6 @@ export default class FutureGame extends Component {
       team2: "USC",
       score2: 0
     }
-   */
   }
   render(){
     return(
@@ -30,23 +30,14 @@ export default class FutureGame extends Component {
         <View style = {styles.SportType} >
         <Text style ={styles.SportTypeText}> {this.state.sport}</Text>
         </View>
-
         <View style = {styles.ScoreContainer}>
-
           <Text style = {styles.ScoreText}>
           <Image source={require('./school_logos/triton.png')}  style = {styles.logo}/>
           {"\t"}{this.state.team1} {this.state.score1} {"\t"}{this.state.score2} {this.state.team2}{"\t"}
           {"\t"}<Image source={require('./school_logos/usc.png')}  style = {styles.logo}/>
         </Text>
         </View>
-        <View style = {styles.ButtonContainer}>
-          <Text style = {styles.ButtonText}> Stats{"\t"}{"\t"}Notes{"\t"}{"\t"}Map</Text>
-        </View>
-
-        <View style={styles.InfoContainer}>
-          <View style = {{borderColor:"grey",borderBottomWidth:1}}>
-          </View>
-        </View>
+        <Status/>
       </View>
 
     );

@@ -64,13 +64,14 @@ export default class MyScene extends Component {
                </Text>
              </View>
              <TouchableOpacity activeOpacity={1} onPress={this.NavFuture.bind(this)}>
-              <FutureGamePreview/>
-              <FutureGamePreview/>
-              <FutureGamePreview/>
-              <FutureGamePreview/>
-              <FutureGamePreview/>
+               <View>
+                <FutureGamePreview/>
+                <FutureGamePreview/>
+                <FutureGamePreview/>
+                <FutureGamePreview/>
+                <FutureGamePreview/>
+              </View>
               </TouchableOpacity>
-
            </ScrollView>
 
 
