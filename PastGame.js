@@ -8,6 +8,9 @@ import {
   Image
 } from 'react-native'
 
+const Dimensions = require('Dimensions');
+const window = Dimensions.get('window');
+
 export default class LiveGame extends Component {
   constructor(){
     super()
@@ -24,17 +27,8 @@ export default class LiveGame extends Component {
       <View>
         <Text style={styles.sport}> --{this.state.sport}-- </Text>
         <View style={styles.container}>
-          <View style={styles.logo_item}>
-            <Image source={require('./basketball.png')} style={styles.logo}/>
-            <Text>{"\t\t"}</Text>
-          </View>
           <View>
             <Text style={styles.item}><Image source={require('./school_logos/triton.png')} style={styles.sport_image}/> {this.state.team1}  {this.state.score1}{"\t"} {this.state.score2}  {this.state.team2}  <Image source={require('./school_logos/usc.png')} style={styles.sport_image}/></Text>
-          </View>
-          <View>
-            <Text style={styles.time}>{"\n"}       00:00</Text>
-            <Text style={styles.time}>       1st</Text>
-            <Text style={styles.time}>{"\t"}(G.M?)</Text>
           </View>
         </View>
       </View>
@@ -48,9 +42,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     borderColor: 'grey',
-    borderWidth: 4,
-    borderLeftColor: 'blue',
-    borderLeftWidth: 10
+    borderWidth:0.5,
+    width:window.width
   },
   logo_item:{
     alignItems: 'center'
@@ -58,10 +51,8 @@ const styles = StyleSheet.create({
   item:{
     fontFamily:"Menlo",
     padding: 10,
-    borderWidth: 0.5,
     borderColor: 'grey',
     justifyContent: 'center',
-    alignItems: 'center',
     height: 62,
     textAlign:'center'
   },

@@ -13,7 +13,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
 
   },
+  indicator:{
+    backgroundColor: 'white'
+  },
+  tabbar:{
+    backgroundColor:'black'
+  },
+  tab:{
+    backgroundColor:"navy",
+    opacity:1,
+    borderRightWidth:0.25,
+    borderColor:'white'
+  }
 });
+
+
 
 export default class TabViewExample extends Component {
   state = {
@@ -30,7 +44,12 @@ export default class TabViewExample extends Component {
   };
 
   _renderHeader = (props) => {
-    return <TabBar  {...props} />;
+    return <TabBar  {...props} 
+      indicatorStyle={styles.indicator}
+      tabStyle={styles.tab}
+      style={styles.TabBar}
+    />;
+
   };
 
   _renderScene = ({ route }) => {
@@ -70,5 +89,6 @@ export default class TabViewExample extends Component {
     );
   }
 }
+
 
 AppRegistry.registerComponent('Status', () => Status);

@@ -23,7 +23,6 @@ export default class Game extends Component {
   render() {
     return (
       <View>
-        <Text style={styles.sport}> --{this.state.sport}-- </Text>
         <View style={styles.container}>
           <View style={styles.logo_item}>
             <Image source={require('./basketball.png')} style={styles.logo}/>
@@ -45,12 +44,12 @@ export default class Game extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
     backgroundColor: 'white',
     justifyContent: 'center',
     flexDirection: 'row',
     borderColor: 'grey',
-    borderWidth: 2,
+    borderTopWidth:0,
+    borderBottomWidth:0.5,
     borderLeftColor: 'blue',
     borderLeftWidth: 10
   },
@@ -60,7 +59,6 @@ const styles = StyleSheet.create({
   item:{
     fontFamily:"Menlo",
     padding: 10,
-    borderWidth: 0.5,
     borderColor: 'grey',
     justifyContent: 'center',
     alignItems: 'center',

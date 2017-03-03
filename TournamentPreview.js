@@ -30,9 +30,9 @@ export default class TournamentPreview extends Component {
             <Text style={styles.item}>{'\n'}{this.state.name} </Text>
         
           </View>
-          <View>
+          <View style = {styles.timeBox}>
 
-             <Text style={styles.time}>{'\n'}{'\n'}     {this.state.time}</Text> 
+             <Text style={styles.time}>{this.state.time}</Text> 
          </View>
         </View>
       </View>
@@ -45,13 +45,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     flexDirection: 'row',
     borderColor: 'grey',
-    borderWidth: 2,
+    borderRightWidth:1,
+    borderTopWidth:0,
+    borderBottomWidth:0.5,
     borderLeftColor: 'blue',
     borderLeftWidth: 10
   },
-  Box:{
-      flexDirection:'row',
-      flex:1
+  timeBox:{
+    alignItems: 'stretch',
+    justifyContent: 'center'
   },
   logo_item:{
     alignItems: 'center'
@@ -66,7 +68,10 @@ const styles = StyleSheet.create({
     height: 62,
     textAlign:'center',
     borderColor:'grey',
-    borderWidth:0.5,
+    borderLeftWidth:0.5,
+    borderBottomWidth:0,
+    borderRightWidth:0.5,
+    borderTopWidth:0,
     fontWeight:'bold'
   },
   text:{

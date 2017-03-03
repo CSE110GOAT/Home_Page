@@ -71,10 +71,10 @@ export default class MyScene extends Component {
                 <FutureGamePreview/>
                 <FutureGamePreview/>
                 <FutureGamePreview/>
-                <Text>{"\n"}</Text>
                 <TournamentPreview/>
                 <TournamentPreview/>
-                <TournamentPreview/>                
+                <TournamentPreview/>
+
                 </View>
               </TouchableOpacity>
            </ScrollView>

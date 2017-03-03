@@ -24,7 +24,7 @@ export default class FutureGamePreview extends Component {
     return (
       <View>
         <View style={styles.container}>
-          <View>
+          <View style={styles.logo_item}>
             <Image source={require('./basketball.png')} style={styles.logo}/>
             <Text>{"\t\t"}</Text>
           </View>
@@ -44,18 +44,27 @@ export default class FutureGamePreview extends Component {
 
 const styles = StyleSheet.create({
   container: {
+
     backgroundColor: 'white',
+    justifyContent: 'center',
     flexDirection: 'row',
     borderColor: 'grey',
-    borderWidth: 2,
+    borderTopWidth:0,
+    borderBottomWidth:0.5,
     borderLeftColor: 'blue',
     borderLeftWidth: 10
+  },
+  logo_item:{
+    alignItems: 'center'
   },
   item:{
     fontFamily:"Menlo",
     padding: 10,
-    borderWidth: 0.5,
-    borderColor: 'grey',
+    borderColor:'grey',
+    borderTopWidth:0,
+    borderBottomWidth:0,
+    borderLeftWidth:0.5,
+    borderRightWidth:0.5,
     justifyContent: 'center',
     alignItems: 'center',
     height: 62,
