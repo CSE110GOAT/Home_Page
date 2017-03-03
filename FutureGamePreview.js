@@ -23,7 +23,6 @@ export default class FutureGamePreview extends Component {
   render() {
     return (
       <View>
-        <Text style={styles.sport}> --{this.state.sport}-- </Text>
         <View style={styles.container}>
           <View style={styles.logo_item}>
             <Image source={require('./basketball.png')} style={styles.logo}/>

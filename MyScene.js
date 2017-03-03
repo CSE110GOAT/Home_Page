@@ -39,12 +39,13 @@ export default class MyScene extends Component {
     return (
         <View style={styles.container}>
            <Header/>
-           <ScrollView style={styles.scroll}>
+           <ScrollView style = {{flex:1}} >
              <View style = {styles.time}>
                <Text style={styles.title}>
                  --Today--
                </Text>
              </View>
+        
              <TouchableOpacity activeOpacity={1} onPress={this.navIndiv.bind(this)}>
               <View>
                 <Game/>
@@ -69,6 +70,7 @@ export default class MyScene extends Component {
                 <FutureGamePreview/>
                 <FutureGamePreview/>
                 <FutureGamePreview/>
+                <Text>{"\n"}</Text>
                 <FutureGamePreview/>
               </View>
               </TouchableOpacity>
@@ -87,27 +89,22 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
 
   },
-  head: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: window.width,
-    height: 80,
-    backgroundColor: '#00008b'
-  },
-
   time: {
     justifyContent: 'center',
     alignItems: 'center',
     width: window.width,
-    height: 40,
-    backgroundColor: 'white'
+    height: 30,
+    backgroundColor: 'navy',
+    borderColor:'black',
+    borderWidth:1
   },
   title: {
     justifyContent: 'center',
-    color: 'black',
-    fontSize: 15,
+    color: 'white',
+    fontSize: 20,
     fontWeight: 'bold',
-    fontFamily: "Didot"
+    fontFamily: "Didot",
+
   }
 });
 

@@ -17,7 +17,7 @@ export default class Header extends Component{
     }
     render(){
     return (
-      <View>
+      <View style = {styles.container} >
         <Image source={require('./header.png')} style={styles.header_image}/>
       </View>
       );
@@ -25,6 +25,10 @@ export default class Header extends Component{
   }
 
 const styles = StyleSheet.create({
+  container:{
+    borderBottomColor:'black',
+    borderBottomWidth:1
+  },
   title: {
     justifyContent: 'center',
     color: 'yellow',
