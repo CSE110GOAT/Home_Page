@@ -72,7 +72,7 @@ export default class NavBar extends Component{
               selectedTab: 'social',
             });
           }}>
-          {<Social/>}
+          {<StripeIntegration/>}
           </Icon.TabBarItemIOS>
 
           <Icon.TabBarItemIOS

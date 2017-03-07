@@ -13,9 +13,10 @@ import Header from './Header'
 import FutureGame from './FutureGame'
 import Status from './Status'
 import NavBar from './NavBar'
+import Tournament from './Tournament'
 
 
-export default class NavFuture extends Component {
+export default class NavTournament extends Component {
   constructor(){
     super()
 
@@ -34,7 +35,7 @@ export default class NavFuture extends Component {
           </View>
         </TouchableOpacity>
          <View>
-         <FutureGame/>
+         <Tournament/>
         </View>
         <Status/>
       </View>
@@ -42,6 +43,7 @@ export default class NavFuture extends Component {
     );
   }
 }
+
 const styles = StyleSheet.create({
   game: {
     alignItems: 'center'
@@ -53,4 +55,5 @@ const styles = StyleSheet.create({
 
 
 });
-AppRegistry.registerComponent('NavFuture', () => NavFuture);
+
+AppRegistry.registerComponent('NavTournament', () => NavTournament);

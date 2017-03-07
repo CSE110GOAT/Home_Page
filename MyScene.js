@@ -21,6 +21,8 @@ import FutureGame from './FutureGame'
 import PastGame from './PastGame'
 import FutureGamePreview from './FutureGamePreview'
 import TournamentPreview from './TournamentPreview'
+import Tournament from './Tournament'
+import NavTournament from './NavTournament'
 
 export default class MyScene extends Component {
 
@@ -36,6 +38,12 @@ export default class MyScene extends Component {
     })
   }
 
+navTournament(){
+  this.props.navigator.push({
+    id:'fourth'
+  })
+}
+
   render() {
     return (
         <View style={styles.container}>
@@ -46,7 +54,7 @@ export default class MyScene extends Component {
                  --Today--
                </Text>
              </View>
-        
+
              <TouchableOpacity activeOpacity={1} onPress={this.navIndiv.bind(this)}>
               <View>
                 <Game/>
@@ -58,7 +66,6 @@ export default class MyScene extends Component {
                 <Game/>
               </View>
              </TouchableOpacity>
-      
 
              <View style = {styles.time}>
                <Text style={styles.title}>
@@ -71,12 +78,17 @@ export default class MyScene extends Component {
                 <FutureGamePreview/>
                 <FutureGamePreview/>
                 <FutureGamePreview/>
-                <TournamentPreview/>
-                <TournamentPreview/>
-                <TournamentPreview/>
-
                 </View>
               </TouchableOpacity>
+
+              <TouchableOpacity activeOpacity={1} onPress={this.navTournament.bind(this)}>
+                <View>
+                  <TournamentPreview/>
+                  <TournamentPreview/>
+                  <TournamentPreview/>
+                 </View>
+               </TouchableOpacity>
+
            </ScrollView>
 
 

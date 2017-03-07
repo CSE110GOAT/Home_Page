@@ -17,12 +17,15 @@ import {
   TouchableHighlight,
   Navigator
 } from 'react-native';
+
 import MyScene from './MyScene'
 import Game from './Game'
 import Header from './Header'
 import NavBar from './NavBar'
 import Indiv from './Indiv'
 import NavFuture from './NavFuture'
+import NavTournament from './NavTournament'
+import StripeIntegration from './StripeIntegration'
 
 
 export default class HomeNav extends Component {
@@ -48,6 +51,8 @@ export default class HomeNav extends Component {
               return (<Indiv navigator={navigator} title="second" />);
             case 'third':
               return (<NavFuture navigator={navigator} title="third"/>);
+            case 'fourth':
+              return (<NavTournament navigator={navigator} title="fourth"/>);
           }
         }
       }
@@ -70,7 +75,6 @@ const styles = StyleSheet.create({
     height: 80,
     backgroundColor: '#00008b'
   },
-
   time: {
     justifyContent: 'center',
     alignItems: 'center',
