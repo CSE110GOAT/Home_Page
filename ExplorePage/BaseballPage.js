@@ -8,7 +8,9 @@ import {
   Image,
   TouchableHighlight,
   Navigator,
-  TabBarIOS
+  TabBarIOS,
+  Linking,
+  WebView
 } from 'react-native';
 
 import Header from './Header';
@@ -19,6 +21,8 @@ import WomenSports from './WomenSports';
 import SportTabBar from './SportTabBar';
 import Slider from './Slider.js';
 import BaseballRoster from './BaseballRoster';
+import TeamStats from './TeamStats';
+import Article from '../NewsPage_2/Article';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -26,6 +30,7 @@ export default class BaseballPage extends Component {
 
   constructor() {
     super()
+
   }
 
   render() {
@@ -38,7 +43,8 @@ export default class BaseballPage extends Component {
           page = {this}
         />
 
-        <Slider games = "hi" roster = {<BaseballRoster/>} stats = "hope this works" />
+        <Slider games = "hi" roster = "http://www.ucsdtritons.com/SportSelect.dbml?&DB_OEM_ID=5800&SPID=2331&SPSID=29814"
+        stats = "hope it works" />
 
       </View>
 
@@ -46,8 +52,5 @@ export default class BaseballPage extends Component {
   }
 };
 
-const styles = StyleSheet.create({
-
-});
 
 AppRegistry.registerComponent('BaseballPage', () => BaseballPage);

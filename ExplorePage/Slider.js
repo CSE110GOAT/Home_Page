@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, AppRegistry } from 'react-native';
+import { View, StyleSheet, Text, AppRegistry, WebView } from 'react-native';
 import { TabViewAnimated, TabBar } from 'react-native-tab-view';
 
 import BaseballRoster from './MSportPages/BaseballRoster';
@@ -14,6 +14,9 @@ import MenTennis from './MSportPages/MenTennis';
 import MenTF from './MSportPages/MenTF';
 import MenVolleyball from './MSportPages/MenVolleyball';
 import MenWP from './MSportPages/MenWP';
+
+import Article from '../NewsPage_2/Article';
+import TeamStats from './TeamStats';
 
 const styles = StyleSheet.create({
   container: {
@@ -33,6 +36,13 @@ const styles = StyleSheet.create({
   tab: {
     opacity: 1,
   },
+
+  webpage: {
+  marginTop: 20,
+  maxHeight: 200,
+  width: 320,
+  flex: 1
+},
 
   tabbar: {
     backgroundColor: 'navy'
@@ -69,7 +79,12 @@ export default class Slider extends Component {
         </View>;
     case '2':
       return <View style={styles.page} >
-          {this.props.roster}
+          <WebView
+          source ={{uri: 'http://www.ucsdtritons.com/fls/5800/stats/baseball/2017/teamstat.htm?DB_OEM_ID=5800'}}
+          ref = {'webview'}
+          scalesPageToFit = {true}
+          style = {styles.webpage}
+          />
         </View>;
     case '3':
       return <View style={styles.page} >
