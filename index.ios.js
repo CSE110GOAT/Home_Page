@@ -27,8 +27,6 @@ import FutureGame from './FutureGame'
 import FutureGamePreview from './FutureGamePreview'
 import NavTournament from './NavTournament'
 import Tournament from './Tournament'
-import StripeIntegration from './StripeIntegration'
-var StripeNative = require('react-native-stripe');
 
 export default class TrialProject extends Component {
   constructor(){

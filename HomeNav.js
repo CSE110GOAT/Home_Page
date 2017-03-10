@@ -25,7 +25,6 @@ import NavBar from './NavBar'
 import Indiv from './Indiv'
 import NavFuture from './NavFuture'
 import NavTournament from './NavTournament'
-import StripeIntegration from './StripeIntegration'
 
 
 export default class HomeNav extends Component {

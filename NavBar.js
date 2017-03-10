@@ -18,9 +18,9 @@ const myIcon = (<Icon name="rocket" size={30} color="#900" />)
 import Indiv from './Indiv'
 import MyScene from './MyScene'
 import HomeNav from './HomeNav'
-import Explore from './Explore'
+import Explore from './ExplorePage/index.ios.js'
 import Social from './Social'
-import News from './News'
+import News from './NewsPage/index.ios.js'
 
 const Dimensions = require('Dimensions');
 const window = Dimensions.get('window');
@@ -72,7 +72,7 @@ export default class NavBar extends Component{
               selectedTab: 'social',
             });
           }}>
-          {<StripeIntegration/>}
+          {<Social/>}
           </Icon.TabBarItemIOS>
 
           <Icon.TabBarItemIOS
