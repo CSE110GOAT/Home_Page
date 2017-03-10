@@ -20,7 +20,7 @@ import MyScene from './MyScene'
 import HomeNav from './HomeNav'
 import Explore from './ExplorePage/index.ios.js'
 import Social from './Social'
-import News from './NewsPage/index.ios.js'
+import News from './NewsPage_2/index.ios.js'
 
 const Dimensions = require('Dimensions');
 const window = Dimensions.get('window');
