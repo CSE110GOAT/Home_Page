@@ -41,7 +41,7 @@ export default class Slider extends Component {
 
     case '2':
       return <View style={styles.page}>
-
+          {this.props.roster}
         </View>
 
     case '3':
