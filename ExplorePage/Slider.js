@@ -45,7 +45,7 @@ export default class Slider extends Component {
         </View>
 
     case '3':
-      return /*<View style={styles.page}>
+      return <View style={styles.page}>
           <View>
             <TouchableOpacity
               disabled={!this.state.canGoBack}
@@ -62,8 +62,7 @@ export default class Slider extends Component {
           style = {styles.webpage}
           onNavigationStateChange = {this.onNavigationStateChange.bind(this)}
         />
-        </View>*/
-        <TeamStats />
+        </View>
 
     default:
       return null;
