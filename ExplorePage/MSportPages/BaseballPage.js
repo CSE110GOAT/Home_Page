@@ -38,8 +38,11 @@ export default class BaseballPage extends Component {
           page = {this}
         />
 
-        <Slider games = "hi" roster = {<BaseballRoster/>} stats = "hope this works" />
-
+        <Slider
+          games = "hi"
+          roster = {<BaseballRoster/>}
+          statsURL = "http://www.ucsdtritons.com/fls/5800/stats/baseball/2017/teamstat.htm?DB_OEM_ID=5800"
+        />
       </View>
 
     );

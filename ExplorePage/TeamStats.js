@@ -27,7 +27,7 @@ export default class TeamStats extends Component {
         console.log('Don\'t know how to open URI: ' + this.state.url);
       }
     });
-  };  
+  };
 
   render() {
     return (

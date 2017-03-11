@@ -1,22 +1,98 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, AppRegistry, WebView } from 'react-native';
+import { View, StyleSheet, Text, AppRegistry, WebView, TouchableOpacity } from 'react-native';
 import { TabViewAnimated, TabBar } from 'react-native-tab-view';
 
-import BaseballRoster from './MSportPages/BaseballRoster';
-import MBasketballRoster from './MSportPages/MBasketballRoster';
-import MenXC from './MSportPages/MXCRoster';
-import MenFencing from './MSportPages/MenFencing';
-import Golf from './MSportPages/Golf';
-import MenRowing from './MSportPages/MenRowing';
-import MenSoccer from './MSportPages/MenSoccer';
-import MenSD from './MSportPages/MenSD';
-import MenTennis from './MSportPages/MenTennis';
-import MenTF from './MSportPages/MenTF';
-import MenVolleyball from './MSportPages/MenVolleyball';
-import MenWP from './MSportPages/MenWP';
 
 import Article from '../NewsPage_2/Article';
 import TeamStats from './TeamStats';
+
+const Dimensions = require('Dimensions');
+const window = Dimensions.get('window');
+
+export default class Slider extends Component {
+
+  state = {
+    index: 0,
+    routes: [
+      { key: '1', title: 'GAMES' },
+      { key: '2', title: 'ROSTER' },
+      { key: '3', title: 'STATS' },
+    ],
+  };
+
+  _handleChangeTab = (index) => {
+    this.setState({ index });
+  };
+
+  _renderHeader = (props) => {
+    return <TabBar {...props}
+      style = {styles.tabbar}
+      indicatorStyle = {styles.indicator}
+      tabStyle = {styles.tab}
+    />;
+  };
+
+  _renderScene = ({ route }) => {
+    switch (route.key) {
+    case '1':
+      return <View style={styles.page}>
+          <Text>{this.props.games}</Text>
+        </View>
+
+    case '2':
+      return <View style={styles.page}>
+
+        </View>
+
+    case '3':
+      return /*<View style={styles.page}>
+          <View>
+            <TouchableOpacity
+              disabled={!this.state.canGoBack}
+              onPress={this.onBack.bind(this)}
+            >
+              <Text>Go Back</Text>
+            </TouchableOpacity>
+          </View>
+
+        <WebView
+          source ={{uri: this.props.statsURL}}
+          ref = {'webview'}
+          scalesPageToFit = {true}
+          style = {styles.webpage}
+          onNavigationStateChange = {this.onNavigationStateChange.bind(this)}
+        />
+        </View>*/
+        <TeamStats />
+
+    default:
+      return null;
+    };
+  }
+
+    onNavigationStateChange(navState) {
+      this.setState({
+        canGoBack: navState.canGoBack
+      })
+    }
+
+    onBack() {
+      this.refs['webview'].goBack();
+    }
+
+
+  render() {
+    return (
+      <TabViewAnimated
+        style={styles.container}
+        navigationState={this.state}
+        renderScene={this._renderScene}
+        renderHeader={this._renderHeader}
+        onRequestChangeTab={this._handleChangeTab}
+      />
+    );
+  }
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -38,75 +114,15 @@ const styles = StyleSheet.create({
   },
 
   webpage: {
-  marginTop: 20,
-  maxHeight: 200,
-  width: 320,
-  flex: 1
-},
+    marginTop: 20,
+    maxHeight: window.height,
+    width: window.width,
+    flex: 1
+  },
 
   tabbar: {
     backgroundColor: 'navy'
   }
 });
-
-export default class Slider extends Component {
-  state = {
-    index: 0,
-    routes: [
-      { key: '1', title: 'GAMES' },
-      { key: '2', title: 'ROSTER' },
-      { key: '3', title: 'STATS' },
-    ],
-  };
-
-  _handleChangeTab = (index) => {
-    this.setState({ index });
-  };
-
-  _renderHeader = (props) => {
-    return <TabBar {...props}
-    style = {styles.tabbar}
-    indicatorStyle = {styles.indicator}
-    tabStyle = {styles.tab}
-    />;
-  };
-
-  _renderScene = ({ route }) => {
-    switch (route.key) {
-    case '1':
-      return <View style={styles.page} >
-          <Text>{this.props.games}</Text>
-        </View>;
-    case '2':
-      return <View style={styles.page} >
-          <WebView
-          source ={{uri: 'http://www.ucsdtritons.com/fls/5800/stats/baseball/2017/teamstat.htm?DB_OEM_ID=5800'}}
-          ref = {'webview'}
-          scalesPageToFit = {true}
-          style = {styles.webpage}
-          />
-        </View>;
-    case '3':
-      return <View style={styles.page} >
-        <Text>{this.props.stats}</Text>
-        </View>
-    default:
-      return null;
-    }
-  };
-
-  render() {
-    return (
-      <TabViewAnimated
-        style={styles.container}
-        navigationState={this.state}
-        renderScene={this._renderScene}
-        renderHeader={this._renderHeader}
-        onRequestChangeTab={this._handleChangeTab}
-
-      />
-    );
-  }
-}
 
 AppRegistry.registerComponent('Slider', () => Slider);
