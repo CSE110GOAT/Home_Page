@@ -17,7 +17,7 @@ import NavBar from '../NavBar';
 import MenSports from '../MenSports';
 import WomenSports from '../WomenSports';
 import SportTabBar from '../SportTabBar';
-
+import TwoTabSlider from '../TwoTabSlider';
 import MTFRoster from './MTFRoster';
 
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -38,7 +38,7 @@ export default class MenTF extends Component {
           page = {this}
         />
 
-
+        <TwoTabSlider />
 
       </View>
 

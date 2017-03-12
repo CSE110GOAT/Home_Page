@@ -17,6 +17,7 @@ import NavBar from '../NavBar';
 import MenSports from '../MenSports';
 import WomenSports from '../WomenSports';
 import SportTabBar from '../SportTabBar';
+import TwoTabSlider from '../TwoTabSlider';
 
 import MXCRoster from './MXCRoster';
 
@@ -38,7 +39,7 @@ export default class MenXC extends Component {
           page = {this}
         />
 
-  
+        <TwoTabSlider />
 
       </View>
 

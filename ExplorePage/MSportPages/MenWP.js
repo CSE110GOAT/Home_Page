@@ -17,7 +17,7 @@ import NavBar from '../NavBar';
 import MenSports from '../MenSports';
 import WomenSports from '../WomenSports';
 import SportTabBar from '../SportTabBar';
-
+import ThreeTabSlider from '../ThreeTabSlider';
 import MWPRoster from './MWPRoster';
 
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -38,6 +38,7 @@ export default class MenWP extends Component {
           page = {this}
         />
 
+        <ThreeTabSlider stats = "menWaterPolo" />
 
       </View>
 

@@ -38,7 +38,9 @@ export default class MenBasketball extends Component {
           page = {this}
         />
 
-    
+        <ThreeTabSlider games = "why is this not working"
+        stats = "menBasketball"
+        />
 
       </View>
 
