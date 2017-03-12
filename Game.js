@@ -12,9 +12,10 @@ import {
 export default class Game extends Component {
   constructor(){
     super()
+
     this.state = {
         sport: "Basketball",
-        team1: "UCSD",
+         team1: "UCSD",
         score1: 21,
         team2: "USC",
         score2: 0
@@ -34,7 +35,6 @@ export default class Game extends Component {
           <View>
             <Text style={styles.time}>{"\n"}       00:00</Text>
             <Text style={styles.time}>       1st</Text>
-            <Text style={styles.time}>{"\t"}(G.M?)</Text>
           </View>
         </View>
       </View>

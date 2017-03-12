@@ -9,7 +9,8 @@ import {
   View,
   Image,
   TabBarIOS,
-  Navigator
+  Navigator,
+  MapView
 } from 'react-native'
 
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -21,6 +22,7 @@ import HomeNav from './HomeNav'
 import Explore from './ExplorePage/index.ios.js'
 import Social from './Social'
 import News from './NewsPage_2/index.ios.js'
+import Maps from './Map'
 
 const Dimensions = require('Dimensions');
 const window = Dimensions.get('window');
@@ -72,7 +74,7 @@ export default class NavBar extends Component{
               selectedTab: 'social',
             });
           }}>
-          {<Social/>}
+          {<Maps/>}
           </Icon.TabBarItemIOS>
 
           <Icon.TabBarItemIOS

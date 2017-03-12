@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { AppRegistry, View, StyleSheet, Text, ScrollView } from 'react-native';
 import { TabViewAnimated, TabBar } from 'react-native-tab-view';
 
+import Maps from './Map'
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -44,7 +46,7 @@ export default class TabViewExample extends Component {
   };
 
   _renderHeader = (props) => {
-    return <TabBar  {...props} 
+    return <TabBar  {...props}
       indicatorStyle={styles.indicator}
       tabStyle={styles.tab}
       style={styles.TabBar}
@@ -66,12 +68,9 @@ export default class TabViewExample extends Component {
             <Text> This is where the notes will go </Text>
           </ScrollView>
       </View>;
-      case '3':
-      return <View style={[ styles.page, { backgroundColor: 'white' } ]}>
-          <ScrollView>
-            <Text> This is where the map will go </Text>
-          </ScrollView>
-      </View>;
+    case '3':
+      return <Maps/>
+
     default:
       return null;
     }
