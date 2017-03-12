@@ -48,7 +48,7 @@ export default class Explore extends Component {
             <Image
               source={require('./explore_pics/baseball.png')}
               style = {{
-                height: 290,
+                height: 285,
                 width: window.width
               }}
             />
@@ -58,7 +58,7 @@ export default class Explore extends Component {
           <Image
             source={require('./explore_pics/tennis.png')}
             style = {{
-              height: 280,
+              height: 275,
               width: window.width,
               marginBottom: 80
             }}

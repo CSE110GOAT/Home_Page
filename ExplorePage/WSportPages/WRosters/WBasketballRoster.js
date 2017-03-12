@@ -29,7 +29,6 @@ export default class WBasketballRoster extends Component {
   }
 
   render() {
-    console.warn(this.getNameFromRosterFile());
     return (
         <View style = {styles.overall_page}>
           <View style = {[styles.roster_row, {borderTopWidth: 0.5}]}>
