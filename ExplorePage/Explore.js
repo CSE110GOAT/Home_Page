@@ -48,7 +48,7 @@ export default class Explore extends Component {
             <Image
               source={require('./explore_pics/baseball.png')}
               style = {{
-                height: 286,
+                height: 290,
                 width: window.width
               }}
             />
@@ -58,8 +58,9 @@ export default class Explore extends Component {
           <Image
             source={require('./explore_pics/tennis.png')}
             style = {{
-              height: 286,
-              width: window.width
+              height: 280,
+              width: window.width,
+              marginBottom: 80
             }}
           />
         </TouchableHighlight>
