@@ -17,7 +17,7 @@ import NavBar from '../NavBar';
 import MenSports from '../MenSports';
 import WomenSports from '../WomenSports';
 import SportTabBar from '../SportTabBar';
-import Slider from '../Slider.js';
+import ThreeTabSlider from '../ThreeTabSlider.js';
 import MBasketballRoster from './MBasketballRoster';
 
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -38,7 +38,7 @@ export default class MenBasketball extends Component {
           page = {this}
         />
 
-        <Slider games = "hi" roster = {<MBasketballRoster/>} stats = "hope this works" />
+    
 
       </View>
 

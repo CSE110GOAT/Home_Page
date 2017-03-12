@@ -19,7 +19,7 @@ import NavBar from '../NavBar';
 import MenSports from '../MenSports';
 import WomenSports from '../WomenSports';
 import SportTabBar from '../SportTabBar';
-import Slider from '../Slider';
+import ThreeTabSlider from '../ThreeTabSlider';
 import BaseballRoster from './BaseballRoster';
 import TeamStats from '../TeamStats';
 import Stats from '../Stats';
@@ -43,7 +43,7 @@ export default class BaseballPage extends Component {
           page = {this}
         />
 
-        <Slider games = "why is this not working"
+        <ThreeTabSlider games = "why is this not working"
         stats = "baseball"
         />
 
