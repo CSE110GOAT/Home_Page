@@ -17,7 +17,7 @@ import NavBar from '../NavBar';
 import MenSports from '../MenSports';
 import WomenSports from '../WomenSports';
 import SportTabBar from '../SportTabBar';
-import Slider from '../Slider.js';
+
 import MWPRoster from './MWPRoster';
 
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -38,7 +38,6 @@ export default class MenWP extends Component {
           page = {this}
         />
 
-        <Slider games = "hi" roster = {<MWPRoster/>} stats = "hope this works" />
 
       </View>
 

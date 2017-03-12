@@ -13,8 +13,6 @@ import {
 const Dimensions = require('Dimensions');
 const window = Dimensions.get('window');
 
-import Slider from './Slider.js';
-
 export default class Stats extends Component {
   constructor(props) {
     super(props);

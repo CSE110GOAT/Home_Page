@@ -17,7 +17,7 @@ import NavBar from '../NavBar';
 import MenSports from '../MenSports';
 import WomenSports from '../WomenSports';
 import SportTabBar from '../SportTabBar';
-import Slider from '../Slider.js';
+
 import MTennisRoster from './MTennisRoster';
 
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -38,8 +38,7 @@ export default class MenTennis extends Component {
           page = {this}
         />
 
-        <Slider games = "hi" roster = {<MTennisRoster/>} stats = "hope this works" />
-
+    
       </View>
 
     );
