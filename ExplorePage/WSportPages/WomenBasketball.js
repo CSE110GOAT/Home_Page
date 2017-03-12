@@ -13,6 +13,7 @@ import {
 
 import NavBar from '../NavBar';
 import SportTabBar from '../SportTabBar';
+import ThreeTabSlider from '../ThreeTabSlider';
 import WBasketballRoster from './WRosters/WBasketballRoster';
 
 export default class WomenBasketball extends Component {
@@ -29,12 +30,12 @@ export default class WomenBasketball extends Component {
           previous = "women"
           page = {this}
         />
-/*
+
         <ThreeTabSlider
           games = "Games will go here"
           roster = {<WBasketballRoster/>}
-          stats = "Stats will go here"
-        />*/
+          stats = "womenBasketball"
+        />
 
       </View>
     );

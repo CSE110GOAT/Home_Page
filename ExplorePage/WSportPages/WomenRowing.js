@@ -13,7 +13,8 @@ import {
 
 import NavBar from '../NavBar';
 import SportTabBar from '../SportTabBar';
-import WRowingRoster from './WRosters/WRowingRoster'
+import TwoTabSlider from '../TwoTabSlider';
+import WRowingRoster from './WRosters/WRowingRoster';
 
 export default class WomenRowing extends Component {
   constructor() {
@@ -30,11 +31,10 @@ export default class WomenRowing extends Component {
           page = {this}
         />
 
-        /*<Slider
+        <TwoTabSlider
           games = "Games will go here"
           roster = {<WRowingRoster/>}
-          stats = "Stats will go here"
-        />*/
+        />
 
       </View>
     );

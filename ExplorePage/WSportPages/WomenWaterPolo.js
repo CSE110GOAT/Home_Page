@@ -13,6 +13,7 @@ import {
 
 import NavBar from '../NavBar';
 import SportTabBar from '../SportTabBar';
+import ThreeTabSlider from '../ThreeTabSlider';
 import WWaterPoloRoster from './WRosters/WWaterPoloRoster';
 
 export default class WomenWaterPolo extends Component {
@@ -30,11 +31,11 @@ export default class WomenWaterPolo extends Component {
           page = {this}
         />
 
-    /*    <Slider
+        <ThreeTabSlider
           games = "Games will go here"
           roster = {<WWaterPoloRoster/>}
-          stats = "Stats will go here"
-        />*/
+          stats = "WomenWaterPolo"
+        />
 
       </View>
     );

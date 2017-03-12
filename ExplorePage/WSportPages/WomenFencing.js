@@ -13,6 +13,7 @@ import {
 
 import NavBar from '../NavBar';
 import SportTabBar from '../SportTabBar';
+import TwoTabSlider from '../TwoTabSlider'
 import WFencingRoster from './WRosters/WFencingRoster'
 
 export default class WomenFencing extends Component {
@@ -30,11 +31,10 @@ export default class WomenFencing extends Component {
           page = {this}
         />
 
-      /*  <Slider
+        <TwoTabSlider
           games = "Games will go here"
           roster = {<WFencingRoster/>}
-          stats = "Stats will go here"
-        />*/
+        />
 
       </View>
     );
