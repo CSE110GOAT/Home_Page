@@ -8,10 +8,13 @@ import {
   Image,
   TouchableHighlight,
   Navigator,
-  TabBarIOS
+  TabBarIOS,
+  JSON
 } from 'react-native';
 
 import RosterIcon from '../../RosterIcon.js';
+import RawRoster from '../../../GOAT-Backend/static/rosters.json';
+var RosterData = JSON.parse(RawRoster);
 
 export default class WBasketballRoster extends Component {
 
@@ -22,27 +25,10 @@ export default class WBasketballRoster extends Component {
           <View style = {[styles.roster_row, {borderTopWidth: 0.5}]}>
             <TouchableHighlight>
               <View style = {styles.begin_row}>
-                <RosterIcon />
-              </View>
-            </TouchableHighlight>
-
-            <TouchableHighlight>
-              <View>
-                <RosterIcon />
-              </View>
-            </TouchableHighlight>
-
-            <TouchableHighlight>
-              <View style = {styles.end_of_row}>
-                <RosterIcon />
-              </View>
-            </TouchableHighlight>
-          </View>
-
-          <View style = {styles.roster_row}>
-            <TouchableHighlight>
-              <View style = {styles.begin_row}>
-                <RosterIcon />
+                <RosterIcon
+                  name = ""
+                  pic = ''
+                />
               </View>
             </TouchableHighlight>
 

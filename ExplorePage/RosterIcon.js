@@ -15,15 +15,19 @@ export default class RosterIcon extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fitFont: false
+      fitFont: true
     };
   }
 
   render() {
     return(
         <View style={styles.grid}>
-          <Text style={styles.player}
-          adjustsFontSizeToFit={this.state.fitFont}>{this.props.sport}</Text>
+          <Image source = {{uri: this.state.pic}}>
+            <Text style = {styles.player}
+              adjustsFontSizeToFit = {this.state.fitFont}>
+                {this.props.name}
+            </Text>
+          </Image>
         </View>
     );
   }
