@@ -27,6 +27,7 @@ import FutureGame from './FutureGame'
 import FutureGamePreview from './FutureGamePreview'
 import NavTournament from './NavTournament'
 import Tournament from './Tournament'
+import * as firebase from 'firebase'
 
 export default class TrialProject extends Component {
   constructor(){
@@ -36,8 +37,6 @@ export default class TrialProject extends Component {
       onStart: true
     }
   }
-
-
   render() {
     return (
     <NavBar/> )

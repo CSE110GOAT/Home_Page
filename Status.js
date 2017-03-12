@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { AppRegistry, View, StyleSheet, Text, ScrollView } from 'react-native';
+import React, { Component, document } from 'react';
+import { AppRegistry, View, StyleSheet, Text, ScrollView, Image } from 'react-native';
 import { TabViewAnimated, TabBar } from 'react-native-tab-view';
 
 const styles = StyleSheet.create({
@@ -44,13 +44,13 @@ export default class TabViewExample extends Component {
   };
 
   _renderHeader = (props) => {
-    return <TabBar  {...props} 
+    return (<TabBar  {...props}
       indicatorStyle={styles.indicator}
       tabStyle={styles.tab}
       style={styles.TabBar}
-    />;
-
+      />);
   };
+
 
   _renderScene = ({ route }) => {
     switch (route.key) {

@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import {
   AppRegistry,
@@ -8,20 +7,41 @@ import {
   ScrollView,
   Image
 } from 'react-native'
+import * as firebase from 'firebase';
+
+// Initialize Firebase
+firebase.initializeApp({
+    apiKey: "AIzaSyBZDWWw9oGKK9HR-_6zn3_6D8NWwVu39Fw",
+    authDomain: "goatbackend110.firebaseapp.com",
+    databaseURL: "https://goatbackend110.firebaseio.com",
+    storageBucket: "goatbackend110.appspot.com",
+    messagingSenderId: "827020053197"
+});
 
 export default class Game extends Component {
+
   constructor(){
     super()
     this.state = {
-        sport: "Basketball",
-        team1: "UCSD",
-        score1: 21,
-        team2: "USC",
-        score2: 0
-    }
+           sport:  "basketball",
+           team1: "UCSD",
+           score: "N/A",
+           team2: "USC"
+           
+       };
+    this.getData();
+}
+
+  getData() {
+      //var str = "o"
+     firebase.database().refFromURL("https://goatbackend110.firebaseio.com/test").on('value',function(snapshot){
+       this.state = {score: snapshot.child('test').val()}
+       ;
+     });
   }
-  render() {
-    return (
+
+    render() {
+    return(
       <View>
         <View style={styles.container}>
           <View style={styles.logo_item}>
@@ -29,7 +49,7 @@ export default class Game extends Component {
             <Text>{"\t\t"}</Text>
           </View>
           <View>
-            <Text style={styles.item}><Image source={require('./school_logos/triton.png')} style={styles.sport_image}/> {this.state.team1}  {this.state.score1}{"\t"} {this.state.score2}  {this.state.team2}  <Image source={require('./school_logos/usc.png')} style={styles.sport_image}/></Text>
+            <Text style={styles.item}><Image source={require('./school_logos/triton.png')} style={styles.sport_image}/> {this.state.team1} {this.state.score} {this.state.team2}  <Image source={require('./school_logos/usc.png')} style={styles.sport_image}/></Text>
           </View>
           <View>
             <Text style={styles.time}>{"\n"}       00:00</Text>
@@ -91,5 +111,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   }
 });
+
 
 AppRegistry.registerComponent('Game', () => Game);
