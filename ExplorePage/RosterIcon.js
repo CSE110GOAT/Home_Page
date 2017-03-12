@@ -22,12 +22,11 @@ export default class RosterIcon extends Component {
   render() {
     return(
         <View style={styles.grid}>
-          <Image source = {{uri: this.state.pic}}>
-            <Text style = {styles.player}
-              adjustsFontSizeToFit = {this.state.fitFont}>
-                {this.props.name}
-            </Text>
-          </Image>
+          <Image
+            source = {{uri: this.props.pic}}
+            style = {{width: window.width/3, height: window.height/3 - 50}}
+          />
+
         </View>
     );
   }

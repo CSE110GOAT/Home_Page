@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, AppRegistry, WebView, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, AppRegistry, WebView, TouchableOpacity, Image } from 'react-native';
 import { TabViewAnimated, TabBar } from 'react-native-tab-view';
 
 
 import Article from '../NewsPage_2/Article';
 import TeamStats from './TeamStats';
-
+import RosterIcon from './RosterIcon.js';
 const Dimensions = require('Dimensions');
 const window = Dimensions.get('window');
 

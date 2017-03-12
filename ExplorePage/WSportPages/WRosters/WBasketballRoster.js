@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 
 import RosterIcon from '../../RosterIcon.js';
-import RawRoster from '../../../static/rosters.json';
+//import RawRoster from '../../../static/rosters.json';
 
 export default class WBasketballRoster extends Component {
 

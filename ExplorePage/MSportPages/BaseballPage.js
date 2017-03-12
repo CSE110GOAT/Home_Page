@@ -43,7 +43,7 @@ export default class BaseballPage extends Component {
           page = {this}
         />
 
-        <ThreeTabSlider games = "why is this not working"
+        <ThreeTabSlider games = "why is this not working"  roster = {<BaseballRoster />}
         stats = "baseball"
         />
 

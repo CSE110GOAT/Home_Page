@@ -25,7 +25,6 @@ const window = Dimensions.get('window');
 
 export default class BaseballRoster extends Component {
 
-
   render() {
     return (
 
@@ -35,19 +34,19 @@ export default class BaseballRoster extends Component {
         <View style = {{flex:1, flexDirection: 'row'}}>
           <TouchableHighlight>
             <View>
-              <RosterIcon />
+              <RosterIcon pic = "https://goatbackend110.appspot.com/static/rosters/0/0.png"/>
             </View>
           </TouchableHighlight>
 
           <TouchableHighlight>
             <View>
-              <RosterIcon />
+              <RosterIcon pic = "https://goatbackend110.appspot.com/static/rosters/0/1.png"/>
             </View>
           </TouchableHighlight>
 
           <TouchableHighlight>
             <View>
-              <RosterIcon />
+              <RosterIcon pic = "https://goatbackend110.appspot.com/static/rosters/0/2.png"/>
             </View>
           </TouchableHighlight>
         </View>
