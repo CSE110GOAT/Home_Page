@@ -13,7 +13,6 @@ import {
 
 import NavBar from '../NavBar';
 import SportTabBar from '../SportTabBar';
-import Slider from '../Slider.js';
 import WXCRoster from './WRosters/WXCRoster'
 
 export default class WomenXC extends Component {
@@ -30,12 +29,12 @@ export default class WomenXC extends Component {
           previous = "women"
           page = {this}
         />
-
+/*
         <Slider
           games = "Games will go here"
           roster = {<WXCRoster/>}
           stats = "Stats will go here"
-        />
+        />*/
 
       </View>
     );

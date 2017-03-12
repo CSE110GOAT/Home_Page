@@ -13,7 +13,6 @@ import {
 
 import NavBar from '../NavBar';
 import SportTabBar from '../SportTabBar';
-import Slider from '../Slider.js';
 import WTennisRoster from './WRosters/WTennisRoster'
 
 export default class WomenTennis extends Component {
@@ -31,11 +30,11 @@ export default class WomenTennis extends Component {
           page = {this}
         />
 
-        <Slider
+      /*  <Slider
           games = "Games will go here"
           roster = {<WTennisRoster/>}
           stats = "Stats will go here"
-        />
+        />*/
 
       </View>
     );

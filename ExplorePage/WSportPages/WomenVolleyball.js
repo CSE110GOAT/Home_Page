@@ -13,7 +13,6 @@ import {
 
 import NavBar from '../NavBar';
 import SportTabBar from '../SportTabBar';
-import Slider from '../Slider.js';
 import WVolleyballRoster from './WRosters/WVolleyballRoster'
 
 export default class WomenVolleyBall extends Component {
@@ -31,11 +30,11 @@ export default class WomenVolleyBall extends Component {
           page = {this}
         />
 
-        <Slider
+      /*  <Slider
           games = "Women Volleyball Games will go here"
           roster = {<WVolleyballRoster/>}
           stats = "Women Volleyball stats will go here"
-        />
+        />*/
 
       </View>
     );
