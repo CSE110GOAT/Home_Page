@@ -13,20 +13,30 @@ import {
 } from 'react-native';
 
 import RosterIcon from '../../RosterIcon.js';
-import RawRoster from '../../../GOAT-Backend/static/rosters.json';
-var RosterData = JSON.parse(RawRoster);
+import RawRoster from '../../../static/rosters.json';
 
 export default class WBasketballRoster extends Component {
 
+  getNameFromRosterFile() {
+    return fetch("https://goatbackend.appspot.com/rosters/roster.json")
+      .then((response) => response.json())
+      .then((responseJson) => {
+        return responseJson["rosters"]["0"];
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
   render() {
+    console.warn(this.getNameFromRosterFile());
     return (
         <View style = {styles.overall_page}>
-
           <View style = {[styles.roster_row, {borderTopWidth: 0.5}]}>
             <TouchableHighlight>
               <View style = {styles.begin_row}>
                 <RosterIcon
-                  name = ""
+                  name = {this.getNameFromRosterFile()[0]}
                   pic = ''
                 />
               </View>

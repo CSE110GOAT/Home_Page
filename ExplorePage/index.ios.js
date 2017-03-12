@@ -9,6 +9,7 @@ import {
   StyleSheet,
   Image,
   Navigator,
+  ListView
 } from 'react-native';
 
 import Header from './Header';
@@ -43,8 +44,52 @@ import WomenTrack from './WSportPages/WomenTrack';
 import WomenVolleyball from './WSportPages/WomenVolleyball';
 import WomenWaterPolo from './WSportPages/WomenWaterPolo';
 
+import * as firebase from 'firebase';
+
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyBZDWWw9oGKK9HR-_6zn3_6D8NWwVu39Fw",
+  authDomain: "goatbackend110.firebaseapp.com",
+  databaseURL: "https://goatbackend110.firebaseio.com",
+  storageBucket: "goatbackend110.appspot.com",
+  messagingSenderId: "827020053197"
+};
+
+firebase.initializeApp(config);
 
 export default class PracticeProject extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataSource: new ListView.DataSource({
+        rowHasChanged: (row1, row2) => row1 !== row2,
+      })
+    };
+
+    this.itemsRef = firebase.database().ref();
+  }
+
+  listenForItems(itemsRef) {
+    itemsRef.on('value', (snap) => {
+      // get children as an array
+      var items = [];
+      snap.forEach((child) => {
+        items.push({
+          title: child.val().title,
+          _key: child.key
+        });
+      });
+
+      this.setState({
+        dataSource: this.state.dataSource.cloneWithRows(items)
+      });
+    });
+  }
+
+  componentDidMount() {
+    this.listenForItems(this.itemsRef);
+  }
 
   render () {
     return (
