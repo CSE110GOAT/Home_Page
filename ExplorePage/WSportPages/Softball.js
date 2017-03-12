@@ -13,7 +13,7 @@ import {
 
 import NavBar from '../NavBar';
 import SportTabBar from '../SportTabBar';
-import Slider from '../Slider.js';
+import ThreeTabSlider from '../ThreeTabSlider.js';
 import SoftballRoster from './WRosters/SoftballRoster'
 
 export default class Softball extends Component {
@@ -31,10 +31,10 @@ export default class Softball extends Component {
           page = {this}
         />
 
-        <Slider
+        <ThreeTabSlider
           games = "Games will go here"
           roster = {<SoftballRoster/>}
-          stats = "Stats will go here"
+          stats = "softball"
         />
 
       </View>

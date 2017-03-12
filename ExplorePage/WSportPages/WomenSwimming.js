@@ -13,7 +13,8 @@ import {
 
 import NavBar from '../NavBar';
 import SportTabBar from '../SportTabBar';
-import WSwimmingRoster from './WRosters/WSwimmingRoster'
+import TwoTabSlider from '../TwoTabSlider';
+import WSwimmingRoster from './WRosters/WSwimmingRoster';
 
 export default class WomenSwimming extends Component {
   constructor() {
@@ -30,11 +31,10 @@ export default class WomenSwimming extends Component {
           page = {this}
         />
 
-      /*  <Slider
+        <TwoTabSlider
           games = "Swim Meets will go here"
           roster = {<WSwimmingRoster/>}
-          stats = "Swim Team stats will go here"
-        />*/
+        />
 
       </View>
     );
