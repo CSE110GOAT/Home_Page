@@ -5,18 +5,23 @@ import { TabViewAnimated, TabBar } from 'react-native-tab-view';
 
 import Article from '../NewsPage_2/Article';
 import TeamStats from './TeamStats';
+import Stats from './Stats';
 
 const Dimensions = require('Dimensions');
 const window = Dimensions.get('window');
 
 export default class Slider extends Component {
+  constructor(props) {
+    super(props);
+
+  }
 
   state = {
     index: 0,
+    sport: this.props.stats,
     routes: [
       { key: '1', title: 'GAMES' },
       { key: '2', title: 'ROSTER' },
-      { key: '3', title: 'STATS' },
     ],
   };
 
@@ -32,8 +37,10 @@ export default class Slider extends Component {
     />;
   };
 
+
   _renderScene = ({ route }) => {
-    switch (route.key) {
+
+  switch (route.key) {
     case '1':
       return <View style={styles.page}>
           <Text>{this.props.games}</Text>
@@ -44,40 +51,10 @@ export default class Slider extends Component {
           {this.props.roster}
         </View>
 
-    case '3':
-      return <View style={styles.page}>
-          <View>
-            <TouchableOpacity
-              disabled={!this.state.canGoBack}
-              onPress={this.onBack.bind(this)}
-            >
-              <Text>Go Back</Text>
-            </TouchableOpacity>
-          </View>
-
-        <WebView
-          source ={{uri: this.props.statsURL}}
-          ref = {'webview'}
-          scalesPageToFit = {true}
-          style = {styles.webpage}
-          onNavigationStateChange = {this.onNavigationStateChange.bind(this)}
-        />
-        </View>
-
     default:
       return null;
     };
   }
-
-    onNavigationStateChange(navState) {
-      this.setState({
-        canGoBack: navState.canGoBack
-      })
-    }
-
-    onBack() {
-      this.refs['webview'].goBack();
-    }
 
 
   render() {
@@ -124,4 +101,4 @@ const styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('Slider', () => Slider);
+AppRegistry.registerComponent('TwoTabSlider', () => TwoTabSlider);

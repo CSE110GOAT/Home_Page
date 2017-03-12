@@ -8,7 +8,9 @@ import {
   Image,
   TouchableHighlight,
   Navigator,
-  TabBarIOS
+  TabBarIOS,
+  Linking,
+  WebView
 } from 'react-native';
 
 import Header from '../Header';
@@ -17,15 +19,18 @@ import NavBar from '../NavBar';
 import MenSports from '../MenSports';
 import WomenSports from '../WomenSports';
 import SportTabBar from '../SportTabBar';
-import Slider from '../Slider.js';
+import Slider from '../Slider';
 import BaseballRoster from './BaseballRoster';
+import TeamStats from '../TeamStats';
+import Stats from '../Stats';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class BaseballPage extends Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
+
   }
 
   render() {
@@ -38,15 +43,15 @@ export default class BaseballPage extends Component {
           page = {this}
         />
 
-        <Slider
-          games = "hi"
-          roster = {<BaseballRoster/>}
-          statsURL = "http://www.ucsdtritons.com/fls/5800/stats/baseball/2017/teamstat.htm?DB_OEM_ID=5800"
+        <Slider games = "why is this not working"
+        stats = "baseball"
         />
+
       </View>
 
     );
   }
 };
+
 
 AppRegistry.registerComponent('BaseballPage', () => BaseballPage);
