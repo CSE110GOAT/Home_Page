@@ -19,18 +19,20 @@ export default class RosterIcon extends Component {
     super(props);
     this.state = {
       fitFont: true,
-      url: String(this.props.bio)
     };
   }
 
   handleClick = () => {
-    Linking.canOpenURL(this.state.url)
+    Linking.canOpenURL(this.props.bio)
     .then(supported => {
       if (supported) {
-        Linking.openURL(this.state.url);
+        Linking.openURL(this.props.bio);
       } else {
-        console.log('Don\'t know how to open URI: ' + this.state.url);
+        console.log('Don\'t know how to open URI: ' + this.props.bio);
       }
+    })
+    .catch(error => {
+      console.error('rip');
     });
   };
 

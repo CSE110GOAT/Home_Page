@@ -42,10 +42,10 @@ export default class WBasketballRoster extends Component {
               fullBios: this.state.fullBios.concat([
                 responseJson.rosters["12"][i][6]
               ])
-            })
+            });
           }
         })
-        .catch((error) => {
+        .catch((ignore) => {
           console.error(error);
         });
   }
@@ -59,33 +59,33 @@ export default class WBasketballRoster extends Component {
       var url3 = "https://goatbackend110.appspot.com/static/rosters/12/" + (i+2) + ".png"
 
       roster.push(
-        <View style = {styles.roster_row}>
+        <View style = {styles.roster_row} key = {i}>
           <TouchableHighlight>
-            <View style = {styles.iconLeft}>
+            <View style = {styles.iconLeft} key = {i.toString()}>
               <RosterIcon
                 pic = {url1}
                 name = {this.state.names[i]}
-                bio = {this.state.fullBios[i]}
+                bio = {"http://" + this.state.fullBios[i]}
               />
             </View>
           </TouchableHighlight>
 
           <TouchableHighlight>
-            <View style = {styles.icon}>
+            <View style = {styles.icon} key = {(i+1).toString()}>
               <RosterIcon
                 pic = {url2}
                 name = {this.state.names[i+1]}
-                bio = {this.state.fullBios[i+1]}
+                bio = {"http://" + this.state.fullBios[i+1]}
               />
             </View>
           </TouchableHighlight>
 
           <TouchableHighlight>
-            <View style = {styles.iconRight}>
+            <View style = {styles.iconRight} key = {(i+2).toString()}>
               <RosterIcon
                 pic = {url3}
                 name = {this.state.names[i+2]}
-                bio = {this.state.fullBios[i+2]}
+                bio = {"http://" + this.state.fullBios[i+2]}
               />
             </View>
           </TouchableHighlight>
