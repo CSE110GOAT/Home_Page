@@ -76,7 +76,7 @@ navTournament(){
          if(oneGame[5] == ""){
             this.setState({
             futureGame: this.state.futureGame.concat([
-             <View>
+             <View key = {i}>
 
                <FutureGamePreview
                 date= {oneGame[0]}
@@ -90,6 +90,7 @@ navTournament(){
                 stats = {oneGame[8]}
                 latitude = {oneGame[9]}
                 longitude = {oneGame[10]}
+                gender = {oneGame[12]}
                 navigator = {this.props.navigator}
                 />
               </View>
@@ -119,7 +120,7 @@ navTournament(){
          */
           this.setState({
             game: this.state.game.concat([
-             <View>
+             <View key = {i}>
                <Game
                 date= {oneGame[0]}
                 sport = {oneGame[1]}
@@ -132,6 +133,7 @@ navTournament(){
                 stats = {oneGame[8]}
                 latitude = {oneGame[9]}
                 longitude = {oneGame[10]}
+                gender = {oneGame[12]}
                 navigator = {this.props.navigator}
                 />
               </View>

@@ -46,6 +46,7 @@ export default class Indiv extends Component {
        stats = {this.props.stats}
        latitude = {this.props.latitude}
        longitude = {this.props.longitude}
+       gender = {this.props.gender}
           />
         </View>
         <Status
@@ -60,6 +61,7 @@ export default class Indiv extends Component {
        stats = {this.props.stats}
        latitude =  {this.props.latitude}
        longitude = {this.props.longitude}
+       gender = {this.props.gender}
         />
       </View>
 
