@@ -8,83 +8,8 @@ import {
   Image,
   ListView
 } from 'react-native'
-import * as firebase from 'firebase';
 
-
-
-
-// Initialize Firebase
-firebase.initializeApp({
-    apiKey: "AIzaSyBZDWWw9oGKK9HR-_6zn3_6D8NWwVu39Fw",
-    authDomain: "goatbackend110.firebaseapp.com",
-    databaseURL: "https://goatbackend110.firebaseio.com",
-    storageBucket: "goatbackend110.appspot.com",
-    messagingSenderId: "827020053197"
-});
-
-export default class Game extends Component {
-
-  constructor(){
-    super()
-    this.state = {
-           sport:  "basketball",
-           team1: "UCSD",
-           score: "N/A",
-           team2: "USC",
-           dataSource: new ListView.DataSource({
-        rowHasChanged: (row1, row2) => row1 !== row2,
-      })
-       };
-       this.itemsRef = firebase.database().ref();
-
-}
-
-
- getJSONdata() {
-   fetch('https://goatbackend.appspot.com/schedule.json')
-      .then((response) => response.json())
-      .then((responseJson) => {
-        this.setState ({ 
-          sport: responseJson.Games["0"][1], 
-          team1: responseJson.Games["0"][3],
-          score: responseJson.Games["0"][5],
-          team2: responseJson.Games["0"][2] 
-        });
-
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
-/*
-  getData() {
-      //var str = "o"
-  firebase.database().ref("test").on('value',function(snapshot){
-
-     });
-  }
-*/
-/*
-  listenForItems(itemsRef) {
-    itemsRef.on('value', (snap) => {
-
-      // get children as an array
-      var items = [];
-      snap.forEach((child) => {
-        items.push({
-          title: child.val().title,
-          _key: child.key
-        });
-      });
-      
-      this.setState({
-        dataSource: this.state.dataSource.copyItems(items)
-      });
-   });
-  }
-*/
-
-    render() {
+const Game = (props) => {
     return(
       <View>
         <View style={styles.container}>
@@ -93,18 +18,15 @@ export default class Game extends Component {
             <Text>{"\t\t"}</Text>
           </View>
           <View>
-            <Text style={styles.item}><Image source={require('./school_logos/triton.png')} style={styles.sport_image}/> {this.getJSONdata()} {this.state.team1}  {this.state.score} {this.state.team2}  <Image source={require('./school_logos/usc.png')} style={styles.sport_image}/></Text>
+            <Text style={styles.item}><Image source={require('./school_logos/triton.png')} style={styles.sport_image}/> {props.team1}  {props.score} {props.team2}  <Image source={require('./school_logos/usc.png')} style={styles.sport_image}/></Text>
           </View>
           <View>
-            <Text style={styles.time}>{"\n"}       00:00</Text>
-            <Text style={styles.time}>       1st</Text>
-            <Text style={styles.time}>{"\t"}(G.M?)</Text>
+            <Text style={styles.time}>{props.date}</Text>
           </View>
         </View>
       </View>
-    );
+    )
   }
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -157,4 +79,4 @@ const styles = StyleSheet.create({
 });
 
 
-AppRegistry.registerComponent('Game', () => Game);
+export default Game

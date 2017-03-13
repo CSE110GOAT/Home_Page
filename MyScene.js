@@ -25,6 +25,14 @@ import Tournament from './Tournament'
 import NavTournament from './NavTournament'
 
 export default class MyScene extends Component {
+  constructor(){
+    super()
+    this.state = {
+      game : []
+    }
+   {this.getGamedata()}
+
+  }
 
   navIndiv() {
     this.props.navigator.push({
@@ -44,6 +52,35 @@ navTournament(){
   })
 }
 
+ getGamedata() {
+   fetch('https://goatbackend110.appspot.com/static/schedule.json')
+      .then((response) => response.json())
+      .then((responseJson) => {
+       var size =  Object.keys(responseJson.Games).length
+       for(var i = 0; i < size ; i++){  
+          this.setState({
+            game: this.state.game.concat([
+            <TouchableOpacity activeOpacity={1} onPress={this.navIndiv.bind(this)}>
+             <View>
+               <Game 
+                sport = {responseJson.Games[String(i)][1]} 
+                team1 = {responseJson.Games[String(i)][3]}
+                team2 = {responseJson.Games[String(i)][2]}
+                score = {responseJson.Games[String(i)][5]}
+                date = {responseJson.Games[String(i)][0]}
+                />
+              </View>
+           </TouchableOpacity>
+            ])
+          })
+         }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+  }
+
   render() {
     return (
         <View style={styles.container}>
@@ -55,23 +92,14 @@ navTournament(){
                </Text>
              </View>
 
-             <TouchableOpacity activeOpacity={1} onPress={this.navIndiv.bind(this)}>
-              <View>
-                <Game/>
-                <Game/>
-                <Game/>
-                <Game/>
-                <Game/>
-                <Game/>
-                <Game/>
-              </View>
-             </TouchableOpacity>
-
+            {this.state.game}
+    
              <View style = {styles.time}>
                <Text style={styles.title}>
                  --Upcoming--
                </Text>
              </View>
+            
              <TouchableOpacity activeOpacity={1} onPress={this.NavFuture.bind(this)}>
                <View>
                 <FutureGamePreview/>
