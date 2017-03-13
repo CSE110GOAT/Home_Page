@@ -6,50 +6,65 @@ import {
   View,
   ScrollView,
   Image,
-  ListView
+  ListView,
+  TouchableOpacity
 } from 'react-native'
 
+
 const Game = (props) => {
-    return(
-      <View>
+   return(
+    
+      <TouchableOpacity activeOpacity={0.5} onPress= {() => {
+      props.navigator.push({
+        id: 'second',
+        sport: props.sport,
+        location: props.location,
+        team2: props.team2,
+        date: props.date,
+         time: props.time,
+        score: props.score,
+        recap: props.recap,
+       notes: props.notes,
+       stats: props.stats,          
+        })
+      }}>
+      
         <View style={styles.container}>
           <View style={styles.logo_item}>
             <Image source={require('./basketball.png')} style={styles.logo}/>
             <Text>{"\t\t"}</Text>
           </View>
-          <View>
-            <Text style={styles.item}><Image source={require('./school_logos/triton.png')} style={styles.sport_image}/> {props.team1}  {props.score} {props.team2}  <Image source={require('./school_logos/usc.png')} style={styles.sport_image}/></Text>
+          <View style = {{justifyContent:'center'}}>
+            <Text style={styles.item}> UCSD {props.score} {props.team2} </Text>
+            <Text style={styles.time}>{props.date} {props.time}</Text>
           </View>
-          <View>
-            <Text style={styles.time}>{props.date}</Text>
-          </View>
+
         </View>
-      </View>
+      </TouchableOpacity>
     )
-  }
+}
+
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
-    justifyContent: 'center',
-    flexDirection: 'row',
     borderColor: 'grey',
     borderTopWidth:0,
     borderBottomWidth:0.5,
     borderLeftColor: 'blue',
-    borderLeftWidth: 10
+    borderLeftWidth: 10,
   },
   logo_item:{
-    alignItems: 'center'
+    alignItems: 'center',
+    flexDirection:'row',
+    borderRightWidth: 0.5,
+    borderRightColor: 'grey'
   },
   item:{
-    fontFamily:"Menlo",
-    padding: 10,
-    borderColor: 'grey',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 62,
-    textAlign:'center'
+    flexDirection: 'row',
+    fontFamily:"HelveticaNeue-Thin",
+    textAlign:'center',
+    fontSize: 16
   },
   sport:{
     fontFamily: 'Didot',
@@ -60,7 +75,6 @@ const styles = StyleSheet.create({
   sport_image: {
     width: 25,
     height: 50,
-    alignItems: 'center',
     marginTop: 15
   },
   time: {
@@ -72,7 +86,6 @@ const styles = StyleSheet.create({
     width: 35,
     height: 35,
     marginTop: 10,
-    marginRight:15,
     marginLeft: 15,
     justifyContent: 'center'
   }

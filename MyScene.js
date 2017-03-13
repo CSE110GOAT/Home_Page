@@ -27,28 +27,41 @@ import NavTournament from './NavTournament'
 export default class MyScene extends Component {
   constructor(){
     super()
+    this.key = -1
     this.state = {
-      game : []
+      game : [],
+      futureGame: [],
+      tournamentGame : [],
+      sceneSport: "baseSport",
+      sceneTeam1: "baseTeam1",
+      sceneTeam2: "baseTeam2",
+      sceneScore: "baseScore",
+      sceneDate: "baseDate"
     }
-   {this.getGamedata()}
 
+   {this.getGamedata()}
   }
 
   navIndiv() {
     this.props.navigator.push({
-      id: 'second'
-    })
+      id: 'second',
+      //sport: this.state.sceneSport,
+      //team1: this.state.sceneTeam1,
+      //team2: this.state.sceneTeam2,
+      //score: this.state.SceneScore,
+      //date: this.state.sceneDate
+    })  
   }
 
-  NavFuture() {
-    this.props.navigator.push({
-      id: 'third'
-    })
-  }
+
 
 navTournament(){
   this.props.navigator.push({
-    id:'fourth'
+      id:'fourth',
+      sport: this.state.sceneSport,
+      team1: this.state.sceneTeam1,
+      team2: this.state.sceneTeam2,
+      score: this.state.SceneScore
   })
 }
 
@@ -56,23 +69,70 @@ navTournament(){
    fetch('https://goatbackend110.appspot.com/static/schedule.json')
       .then((response) => response.json())
       .then((responseJson) => {
-       var size =  Object.keys(responseJson.Games).length
-       for(var i = 0; i < size ; i++){  
-          this.setState({
-            game: this.state.game.concat([
-            <TouchableOpacity activeOpacity={1} onPress={this.navIndiv.bind(this)}>
+        responseJson = responseJson.Games;
+     //  var size =  Object.keys(responseJson).length
+       for(var i = 0; i < 30 ; i++){ 
+         var oneGame = responseJson[String(i)];
+         if(oneGame[5] == ""){
+            this.setState({
+            futureGame: this.state.futureGame.concat([
              <View>
-               <Game 
-                sport = {responseJson.Games[String(i)][1]} 
-                team1 = {responseJson.Games[String(i)][3]}
-                team2 = {responseJson.Games[String(i)][2]}
-                score = {responseJson.Games[String(i)][5]}
-                date = {responseJson.Games[String(i)][0]}
+               <FutureGamePreview 
+                date= {oneGame[0]} 
+                sport = {oneGame[1]} 
+                team2 = {oneGame[2]}
+                location = {oneGame[3]}
+                time = {oneGame[4]} 
+                score = {oneGame[5]}
+                recap = {oneGame[6]}
+                notes = {oneGame[7]}
+                stats = {oneGame[8]}  
+                navigator = {this.props.navigator}      
+                />
+              </View>
+            ])
+          })
+            continue;
+          }
+        /*
+         else if(() ){
+            /*
+            this.setState({
+            tournamentGame: this.state.tournamentGame.concat([
+              <TouchableOpacity activeOpacity={1} onPress={this.navTournament.bind(this)}>
+             <View>
+               <TournamentPreview 
+                sport = {oneGame[1]}
+                name = {oneGame[2]}
+                date = {oneGame[0]}
                 />
               </View>
            </TouchableOpacity>
             ])
           })
+          
+          continue;
+         }   
+         */
+          this.setState({
+            game: this.state.game.concat([
+             <View>
+               <Game 
+                date= {oneGame[0]} 
+                sport = {oneGame[1]} 
+                team2 = {oneGame[2]}
+                location = {oneGame[3]}
+                time = {oneGame[4]} 
+                score = {oneGame[5]}
+                recap = {oneGame[6]}
+                notes = {oneGame[7]}
+                stats = {oneGame[8]}  
+                navigator = {this.props.navigator}   
+                />
+              </View>
+            ])
+          })
+        
          }
       })
       .catch((error) => {
@@ -100,25 +160,17 @@ navTournament(){
                </Text>
              </View>
             
-             <TouchableOpacity activeOpacity={1} onPress={this.NavFuture.bind(this)}>
-               <View>
-                <FutureGamePreview/>
-                <FutureGamePreview/>
-                <FutureGamePreview/>
-                <FutureGamePreview/>
-                </View>
-              </TouchableOpacity>
+                {this.state.futureGame}
 
-              <TouchableOpacity activeOpacity={1} onPress={this.navTournament.bind(this)}>
-                <View>
-                  <TournamentPreview/>
-                  <TournamentPreview/>
-                  <TournamentPreview/>
-                 </View>
-               </TouchableOpacity>
+
+              <View style = {styles.time}>
+               <Text style={styles.title}>
+                 --Tournament--
+               </Text>
+             </View>    
+             {this.state.tournamentGame}
 
            </ScrollView>
-
 
          </View>
     )

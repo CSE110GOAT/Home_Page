@@ -13,12 +13,12 @@ import Header from './Header'
 import PastGame from './PastGame'
 import Status from './Status'
 import NavBar from './NavBar'
+import Game from './Game'
 
 
 export default class Indiv extends Component {
-  constructor(){
+  constructor(props){
     super()
-
   }
 
   navBack() {
@@ -34,7 +34,17 @@ export default class Indiv extends Component {
           </View>
         </TouchableOpacity>
         <View style = {styles.game}>
-          <PastGame/>
+          <PastGame 
+        sport = {this.props.sport}
+         location = {this.props.location}
+        team2 =  {this.props.team2}
+         date =  {this.props.date}
+         time =  {this.props.time}
+        score = {this.props.score}
+        recap = {this.props.recap}
+       notes = {this.props.notes}
+       stats = {this.props.stats}
+          />
         </View>
         <Status/>
       </View>
