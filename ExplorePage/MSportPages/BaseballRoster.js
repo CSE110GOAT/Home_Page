@@ -23,13 +23,13 @@ export default class BaseballRoster extends Component {
     this.state = {
       size: 0,
       names: [],
-      bioPage: []
+      fullBios: [],
     }
 
-    { this.getRosterSize() }
+    { this.getRoster() }
   }
 
-  getRosterSize() {
+  getRoster() {
      fetch('https://goatbackend110.appspot.com/static/rosters.json')
         .then((response) => response.json())
         .then((responseJson) => {
@@ -42,14 +42,13 @@ export default class BaseballRoster extends Component {
               names: this.state.names.concat([
                 responseJson.rosters["0"][i][0]
               ]),
-
-              bioPage: this.state.bioPage.concat([
+              fullBios: this.state.fullBios.concat([
                 responseJson.rosters["0"][i][6]
               ])
-            })
+            });
           }
         })
-        .catch((error) => {
+        .catch((ignore) => {
           console.error(error);
         });
   }
@@ -64,36 +63,54 @@ export default class BaseballRoster extends Component {
       var url3 = "https://goatbackend110.appspot.com/static/rosters/0/" + (i+2) + ".png"
 
       roster.push(
-        <View style = {styles.roster_row}>
-          <TouchableHighlight >
-            <View style = {styles.iconLeft}>
-              <RosterIcon pic = {url1} name = {this.state.names[i]} />
+        <View style = {styles.roster_row} key = {i}>
+          <TouchableHighlight>
+            <View style = {styles.iconLeft} key = {i.toString()}>
+              <RosterIcon
+                pic = {url1}
+                name = {this.state.names[i]}
+                bio = {"http://" + this.state.fullBios[i]}
+              />
             </View>
           </TouchableHighlight>
 
           <TouchableHighlight>
-            <View style = {styles.icon}>
-              <RosterIcon pic = {url2} name = {this.state.names[i+1]} />
+            <View style = {styles.icon} key = {(i+1).toString()}>
+              <RosterIcon
+                pic = {url2}
+                name = {this.state.names[i+1]}
+                bio = {"http://" + this.state.fullBios[i+1]}
+              />
             </View>
           </TouchableHighlight>
 
           <TouchableHighlight>
-            <View style = {styles.iconRight}>
-              <RosterIcon pic = {url3} name = {this.state.names[i+2]} />
+            <View style = {styles.iconRight} key = {(i+2).toString()}>
+              <RosterIcon
+                pic = {url3}
+                name = {this.state.names[i+2]}
+                bio = {"http://" + this.state.fullBios[i+2]}
+              />
             </View>
           </TouchableHighlight>
         </View>
       );
+
     }
 
     if (this.state.size % 3 != 0) {
       if (this.state.size % 3 == 1) {
-        var url1 = "https://goatbackend110.appspot.com/static/rosters/0/" + (this.state.size - 1) + ".png"
+        var i = (this.state.size - 1)
+        var url1 = "https://goatbackend110.appspot.com/static/rosters/0/" + i + ".png"
         roster.push(
-          <View style = {styles.roster_row}>
+          <View style = {styles.roster_row} key = {i}>
             <TouchableHighlight>
-              <View style = {styles.iconLeft}>
-                <RosterIcon pic = {url1} name = {this.state.names[(this.state.size - 1)]} />
+              <View style = {styles.iconLeft} key = {i.toString()}>
+                <RosterIcon
+                  pic = {url1}
+                  name = {this.state.names[i]}
+                  bio = {"http://" + this.state.fullBios[i]}
+                />
               </View>
             </TouchableHighlight>
           </View>
@@ -101,22 +118,32 @@ export default class BaseballRoster extends Component {
       }
 
       else {
-        var url1 = "https://goatbackend110.appspot.com/static/rosters/0/" + (this.state.size - 2) + ".png"
-        var url2 = "https://goatbackend110.appspot.com/static/rosters/0/" + (this.state.size - 1) + ".png"
+        var i = (this.state.size - 2)
+        var url1 = "https://goatbackend110.appspot.com/static/rosters/0/" + i + ".png"
+        var url2 = "https://goatbackend110.appspot.com/static/rosters/0/" + (i+1) + ".png"
 
         roster.push(
-          <View style = {styles.roster_row}>
+          <View style = {styles.roster_row} key = {i}>
             <TouchableHighlight>
-              <View style = {styles.iconLeft}>
-                <RosterIcon pic = {url1} name = {this.state.names[(this.state.size - 2)]} />
+              <View style = {styles.iconLeft} key = {i.toString()}>
+                <RosterIcon
+                  pic = {url1}
+                  name = {this.state.names[i]}
+                  bio = {"http://" + this.state.fullBios[i]}
+                />
               </View>
             </TouchableHighlight>
 
             <TouchableHighlight>
-              <View style = {styles.icon}>
-                <RosterIcon pic = {url2} name = {this.state.names[(this.state.size - 1)]} />
+              <View style = {styles.icon} key = {(i+1).toString()}>
+                <RosterIcon
+                  pic = {url2}
+                  name = {this.state.names[i+1]}
+                  bio = {"http://" + this.state.fullBios[i+1]}
+                />
               </View>
             </TouchableHighlight>
+
           </View>
         );
       }

@@ -39,7 +39,7 @@ export default class MenXC extends Component {
           page = {this}
         />
 
-        <TwoTabSlider />
+        <TwoTabSlider roster = {<MXCRoster />}/>
 
       </View>
 

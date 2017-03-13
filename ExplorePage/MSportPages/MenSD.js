@@ -38,7 +38,7 @@ export default class MenSD extends Component {
           page = {this}
         />
 
-        <TwoTabSlider />
+        <TwoTabSlider roster = {<MSDRoster />}/>
 
       </View>
 

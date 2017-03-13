@@ -38,7 +38,7 @@ export default class MenTF extends Component {
           page = {this}
         />
 
-        <TwoTabSlider />
+        <TwoTabSlider roster = {<MTFRoster />}/>
 
       </View>
 

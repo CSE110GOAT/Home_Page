@@ -38,7 +38,9 @@ export default class Golf extends Component {
           page = {this}
         />
 
-        <ThreeTabSlider stats = "golf" />
+        <ThreeTabSlider
+        roster = {<GolfRoster />} 
+        stats = "golf" />
       </View>
 
     );

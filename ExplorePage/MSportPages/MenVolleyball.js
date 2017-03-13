@@ -38,7 +38,9 @@ export default class MenVolleyball extends Component {
           page = {this}
         />
 
-        <ThreeTabSlider stats = "menVolleyball" />
+        <ThreeTabSlider
+        roster = {<MVolleyballRoster />}
+        stats = "menVolleyball" />
 
       </View>
 

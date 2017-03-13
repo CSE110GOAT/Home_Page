@@ -38,7 +38,7 @@ export default class MenRowing extends Component {
           page = {this}
         />
 
-        <TwoTabSlider />
+        <TwoTabSlider roster = {<MRowingRoster />}/>
       </View>
 
     );

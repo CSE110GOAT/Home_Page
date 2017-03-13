@@ -38,7 +38,7 @@ export default class MenFencing extends Component {
           page = {this}
         />
 
-        <TwoTabSlider />
+        <TwoTabSlider roster = {<MFencingRoster />}/>
       </View>
 
     );

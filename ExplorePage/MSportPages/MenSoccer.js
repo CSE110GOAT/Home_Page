@@ -38,7 +38,9 @@ export default class MenSoccer extends Component {
           page = {this}
         />
 
-        <ThreeTabSlider stats = "menSoccer" />
+        <ThreeTabSlider
+        roster = {<MSoccerRoster />}
+        stats = "menSoccer" />
 
       </View>
 

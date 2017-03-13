@@ -38,7 +38,9 @@ export default class MenWP extends Component {
           page = {this}
         />
 
-        <ThreeTabSlider stats = "menWaterPolo" />
+        <ThreeTabSlider
+        roster = {<MWPRoster />}
+        stats = "menWaterPolo" />
 
       </View>
 

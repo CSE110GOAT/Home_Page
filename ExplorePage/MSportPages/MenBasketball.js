@@ -39,6 +39,7 @@ export default class MenBasketball extends Component {
         />
 
         <ThreeTabSlider games = "why is this not working"
+        roster = {<MBasketballRoster />}
         stats = "menBasketball"
         />
 
