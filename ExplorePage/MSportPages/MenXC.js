@@ -18,7 +18,7 @@ import MenSports from '../MenSports';
 import WomenSports from '../WomenSports';
 import SportTabBar from '../SportTabBar';
 import TwoTabSlider from '../TwoTabSlider';
-
+import Game from '../Game';
 import MXCRoster from './MXCRoster';
 
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -39,7 +39,9 @@ export default class MenXC extends Component {
           page = {this}
         />
 
-        <TwoTabSlider roster = {<MXCRoster />}/>
+        <TwoTabSlider
+        games = {<Game index = '2'/>}
+        roster = {<MXCRoster />}/>
 
       </View>
 

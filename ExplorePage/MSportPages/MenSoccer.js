@@ -19,7 +19,7 @@ import WomenSports from '../WomenSports';
 import SportTabBar from '../SportTabBar';
 import ThreeTabSlider from '../ThreeTabSlider';
 import MSoccerRoster from './MSoccerRoster';
-
+import Game from '../Game';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class MenSoccer extends Component {
@@ -39,6 +39,7 @@ export default class MenSoccer extends Component {
         />
 
         <ThreeTabSlider
+        games = {<Game index = '6'/>}
         roster = {<MSoccerRoster />}
         stats = "menSoccer" />
 

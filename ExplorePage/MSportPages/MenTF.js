@@ -19,7 +19,7 @@ import WomenSports from '../WomenSports';
 import SportTabBar from '../SportTabBar';
 import TwoTabSlider from '../TwoTabSlider';
 import MTFRoster from './MTFRoster';
-
+import Game from '../Game';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class MenTF extends Component {
@@ -38,7 +38,9 @@ export default class MenTF extends Component {
           page = {this}
         />
 
-        <TwoTabSlider roster = {<MTFRoster />}/>
+        <TwoTabSlider
+        games = {<Game index = '9'/>}
+        roster = {<MTFRoster />}/>
 
       </View>
 

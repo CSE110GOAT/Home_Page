@@ -19,7 +19,7 @@ import WomenSports from '../WomenSports';
 import SportTabBar from '../SportTabBar';
 import ThreeTabSlider from '../ThreeTabSlider';
 import MVolleyballRoster from './MVolleyballRoster';
-
+import Game from '../Game';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class MenVolleyball extends Component {
@@ -39,6 +39,7 @@ export default class MenVolleyball extends Component {
         />
 
         <ThreeTabSlider
+        games = {<Game index = '10'/>}
         roster = {<MVolleyballRoster />}
         stats = "menVolleyball" />
 

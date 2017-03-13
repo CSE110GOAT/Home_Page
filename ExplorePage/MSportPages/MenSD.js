@@ -19,7 +19,7 @@ import WomenSports from '../WomenSports';
 import SportTabBar from '../SportTabBar';
 import TwoTabSlider from '../TwoTabSlider';
 import MSDRoster from './MSDRoster';
-
+import Game from '../Game';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class MenSD extends Component {
@@ -38,7 +38,9 @@ export default class MenSD extends Component {
           page = {this}
         />
 
-        <TwoTabSlider roster = {<MSDRoster />}/>
+        <TwoTabSlider
+        games = {<Game index = '7'/>}
+        roster = {<MSDRoster />}/>
 
       </View>
 

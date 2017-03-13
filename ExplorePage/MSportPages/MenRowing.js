@@ -19,7 +19,7 @@ import WomenSports from '../WomenSports';
 import SportTabBar from '../SportTabBar';
 import TwoTabSlider from '../TwoTabSlider';
 import MRowingRoster from './MRowingRoster';
-
+import Game from '../Game';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class MenRowing extends Component {
@@ -38,7 +38,9 @@ export default class MenRowing extends Component {
           page = {this}
         />
 
-        <TwoTabSlider roster = {<MRowingRoster />}/>
+        <TwoTabSlider
+        games = {<Game index = '5'/>}
+        roster = {<MRowingRoster />}/>
       </View>
 
     );

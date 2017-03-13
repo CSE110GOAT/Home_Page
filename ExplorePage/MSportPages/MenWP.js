@@ -19,7 +19,7 @@ import WomenSports from '../WomenSports';
 import SportTabBar from '../SportTabBar';
 import ThreeTabSlider from '../ThreeTabSlider';
 import MWPRoster from './MWPRoster';
-
+import Game from '../Game';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class MenWP extends Component {
@@ -39,6 +39,7 @@ export default class MenWP extends Component {
         />
 
         <ThreeTabSlider
+        games = {<Game index = '11'/>}
         roster = {<MWPRoster />}
         stats = "menWaterPolo" />
 

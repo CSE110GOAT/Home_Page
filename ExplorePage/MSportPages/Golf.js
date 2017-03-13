@@ -19,7 +19,7 @@ import WomenSports from '../WomenSports';
 import SportTabBar from '../SportTabBar';
 import ThreeTabSlider from '../ThreeTabSlider';
 import GolfRoster from './GolfRoster';
-
+import Game from '../Game';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class Golf extends Component {
@@ -39,7 +39,8 @@ export default class Golf extends Component {
         />
 
         <ThreeTabSlider
-        roster = {<GolfRoster />} 
+        games = {<Game index = '4'/>}
+        roster = {<GolfRoster />}
         stats = "golf" />
       </View>
 
