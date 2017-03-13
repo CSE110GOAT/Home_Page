@@ -57,7 +57,7 @@ export default class TabViewExample extends Component {
     case '1':
       return <View style={[ styles.page, { backgroundColor: '#ff4081' } ]}>
           <ScrollView>
-            <Text> This is where the stats will go </Text>
+            
           </ScrollView>
       </View>;
     case '2':

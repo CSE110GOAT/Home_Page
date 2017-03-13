@@ -21,7 +21,7 @@ const Game = (props) => {
         location: props.location,
         team2: props.team2,
         date: props.date,
-         time: props.time,
+        time: props.time,
         score: props.score,
         recap: props.recap,
        notes: props.notes,
@@ -30,12 +30,10 @@ const Game = (props) => {
       }}>
       
         <View style={styles.container}>
-          <View style={styles.logo_item}>
-            <Image source={require('./basketball.png')} style={styles.logo}/>
-            <Text>{"\t\t"}</Text>
-          </View>
+        
           <View style = {{justifyContent:'center'}}>
-            <Text style={styles.item}> UCSD {props.score} {props.team2} </Text>
+            <Text style={styles.sport}>{props.sport}</Text>
+            <Text style={styles.item}> UCSD{'\t'}{props.score}{'\t'}{props.team2}</Text>
             <Text style={styles.time}>{props.date} {props.time}</Text>
           </View>
 
@@ -67,10 +65,11 @@ const styles = StyleSheet.create({
     fontSize: 16
   },
   sport:{
-    fontFamily: 'Didot',
-    backgroundColor: 'gold',
-    fontWeight: 'bold',
-    borderColor: 'navy'
+    flexDirection: 'row',
+    fontFamily:"HelveticaNeue-Thin",
+    textAlign:'center',
+    fontSize: 12,
+    fontWeight: 'bold'
   },
   sport_image: {
     width: 25,
@@ -93,3 +92,12 @@ const styles = StyleSheet.create({
 
 
 export default Game
+
+
+
+  /*
+          <View style={styles.logo_item}>
+            <Image source={require('./basketball.png')} style={styles.logo}/>
+            <Text>{"\t\t"}</Text>
+
+  */

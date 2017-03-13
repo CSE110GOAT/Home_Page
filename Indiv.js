@@ -46,7 +46,7 @@ export default class Indiv extends Component {
        stats = {this.props.stats}
           />
         </View>
-        <Status/>
+        <Status notes = {this.props.notes} stats = {this.props.stats} />
       </View>
 
     );
