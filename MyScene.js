@@ -76,7 +76,7 @@ navTournament(){
          if(oneGame[5] == ""){
             this.setState({
             futureGame: this.state.futureGame.concat([
-             <View>
+             <View key = {i}>
 
                <FutureGamePreview
                 date= {oneGame[0]}
@@ -120,7 +120,7 @@ navTournament(){
          */
           this.setState({
             game: this.state.game.concat([
-             <View>
+             <View key = {i}>
                <Game
                 date= {oneGame[0]}
                 sport = {oneGame[1]}

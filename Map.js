@@ -7,12 +7,12 @@ export default class Maps extends Component {
 
   state = {
     region: {
-      latitude: this.props.latitude,
-      longitude: this.props.longitude,
+      latitude: parseFloat(this.props.latitude),
+      longitude: parseFloat(this.props.longitude),
       latitudeDelta: 1,
       longitudeDelta: 1
     },
-    annotations: [{latitude: this.props.latitude, longitude: this.props.longitude, animateDrop: true}]
+    annotations: [{latitude: parseFloat(this.props.latitude), longitude: parseFloat(this.props.longitude), animateDrop: true}]
   };
 
   render() {
