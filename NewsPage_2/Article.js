@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import {
   AppRegistry,
@@ -12,51 +11,40 @@ import {
   TouchableOpacity
 } from 'react-native'
 
+
 const Dimensions = require('Dimensions');
 const window = Dimensions.get('window');
 
-export default class Article extends Component {
-  constructor(){
-    super()
-    this.state = {
-        picture: require('./home_bar_icons/basketball.jpg'),
-        source: "UCSD Athletics",
-        time: "12:00 PM",
-        headline: "UCSD Goes D1!",
-        summary: "UCSD students vote to go D1",
-        url: 'http://www.ucsdtritons.com/ViewArticle.dbml?DB_OEM_ID=5800&ATCLID=211501690'
-    }
-  }
+const Article = (props) => {
 
-  handleClick = () => {
-    Linking.canOpenURL(this.state.url).then(supported => {
-      if (supported) {
-        Linking.openURL(this.state.url);
-      } else {
-        console.log('Don\'t know how to open URI: ' + this.state.url);
-      }
-    });
-  };
-
-
-  render() {
+    
     return (
       <TouchableOpacity
-        onPress={this.handleClick}>
+        onPress={() => {
+            Linking.canOpenURL(props.url).then(supported => {
+                if (supported) {
+                    Linking.openURL(props.url);
+                } else {
+                    console.log('Don\'t know how to open URL: ' + props.url);
+                }
+            })
+        }}
+      >
         <View>
-          <Text style={styles.sport}>  Posted by {this.state.source} at {this.state.time}</Text>
+          <Text style={styles.sport}>  Posted by {props.source} at {props.time}</Text>
+          <Text style={styles.sport}>{props.headline}</Text>
+            
           <View style={styles.container}>
             <View style={styles.logo_item}>
-              <Image source={this.state.picture} style={styles.logo}/>
+              <Image source={{uri: props.picture}} style={styles.logo}/>
 
             </View>
           </View>
-          <Text style={styles.sport}>  {this.state.headline}{"\n"}  {this.state.summary}</Text>
         </View>
       </TouchableOpacity>
-    );
-  }
+    )
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -85,7 +73,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'gold',
     fontWeight: 'bold',
     borderColor: 'grey',
-    borderWidth: 2
+    borderWidth: 2,
+    textAlign:'center'
   },
   sport_image: {
     width: 25,
@@ -118,4 +107,5 @@ const styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('Game', () => Game);
+export default Article
+
