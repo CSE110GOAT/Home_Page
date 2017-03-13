@@ -75,7 +75,7 @@ export default class Slider extends Component {
   switch (route.key) {
     case '1':
       return <View style={styles.page}>
-          <Text>{this.props.games}</Text>
+          {this.props.games}
         </View>
 
     case '2':

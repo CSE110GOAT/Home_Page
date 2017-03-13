@@ -23,7 +23,7 @@ import ThreeTabSlider from '../ThreeTabSlider';
 import BaseballRoster from './BaseballRoster';
 import TeamStats from '../TeamStats';
 import Stats from '../Stats';
-
+import Game from '../Game';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class BaseballPage extends Component {
@@ -43,8 +43,10 @@ export default class BaseballPage extends Component {
           page = {this}
         />
 
-        <ThreeTabSlider games = "why is this not working"  roster = {<BaseballRoster />}
-        stats = "baseball"
+        <ThreeTabSlider
+          games = {<Game index = '0'/>}
+          roster = {<BaseballRoster />}
+          stats = "baseball"
         />
 
       </View>
