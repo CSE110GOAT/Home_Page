@@ -50,7 +50,7 @@ export default class Status extends Component {
 
     case '2':
       return <View style={styles.page}>
-          <Stats url = {this.props.stats} />
+          <Stats url = {this.props.notes} />
 
         </View>
 
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
 
   webpage: {
     marginTop: 20,
-    maxHeight: window.height,
+    height: window.height,
     width: window.width,
     flex: 1
   },
