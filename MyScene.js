@@ -90,6 +90,7 @@ navTournament(){
                 stats = {oneGame[8]}
                 latitude = {oneGame[9]}
                 longitude = {oneGame[10]}
+                gender = {oneGame[12]}
                 navigator = {this.props.navigator}
                 />
               </View>
@@ -132,6 +133,7 @@ navTournament(){
                 stats = {oneGame[8]}
                 latitude = {oneGame[9]}
                 longitude = {oneGame[10]}
+                gender = {oneGame[12]}
                 navigator = {this.props.navigator}
                 />
               </View>

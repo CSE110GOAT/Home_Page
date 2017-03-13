@@ -31,10 +31,11 @@ const FutureGamePreview = (props) => {
        notes: props.notes,
        stats: props.stats,
        latitude: props.latitude,
-       longitude: props.longitude
+       longitude: props.longitude,
+       gender: props.gender
         })
       }}>
-
+      if({props.gender == 1}){
         <View style={styles.container}>
           <View style={styles.logo_item}>
             <Image source={require('./basketball.png')} style={styles.logo}/>
@@ -44,7 +45,32 @@ const FutureGamePreview = (props) => {
             <Text style={styles.item}>UCSD{'\t'}{props.team2}  </Text>
             <Text style={styles.time}>{props.date} {props.time} </Text>
           </View>
-        </View>
+            </View>
+        }
+      else if({props.gender == 1}){
+        <View style={styles.container2}>
+          <View style={styles.logo_item}>
+            <Image source={require('./basketball.png')} style={styles.logo}/>
+            <Text>{"\t\t"}</Text>
+          </View>
+          <View>
+            <Text style={styles.item}>UCSD{'\t'}{props.team2}  </Text>
+            <Text style={styles.time}>{props.date} {props.time} </Text>
+          </View>
+            </View>
+      }
+      else{
+        <View style={styles.container3}>
+          <View style={styles.logo_item}>
+            <Image source={require('./basketball.png')} style={styles.logo}/>
+            <Text>{"\t\t"}</Text>
+          </View>
+          <View>
+            <Text style={styles.item}>UCSD{'\t'}{props.team2}  </Text>
+            <Text style={styles.time}>{props.date} {props.time} </Text>
+          </View>
+          </View>
+      }
       </TouchableOpacity>
     )
   }
@@ -61,6 +87,28 @@ const styles = StyleSheet.create({
     borderLeftColor: 'blue',
     borderLeftWidth: 10
   },
+  container2: {
+
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    borderColor: 'grey',
+    borderTopWidth:0,
+    borderBottomWidth:0.5,
+    borderLeftColor: 'gold',
+    borderLeftWidth: 10
+  },
+   container3: {
+
+      backgroundColor: 'white',
+      justifyContent: 'center',
+      flexDirection: 'row',
+      borderColor: 'grey',
+      borderTopWidth:0,
+      borderBottomWidth:0.5,
+      borderLeftColor: 'green',
+      borderLeftWidth: 10
+    },
   logo_item:{
     alignItems: 'center'
   },

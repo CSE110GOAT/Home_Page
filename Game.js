@@ -27,19 +27,40 @@ const Game = (props) => {
        notes: props.notes,
        stats: props.stats,
        latitude: props.latitude,
-       longitude: props.longitude
+       longitude: props.longitude,
+       gender: props.gender
         })
       }}>
 
-        <View style={styles.container}>
-
+ getComp = () =>{
+      if({props.gender == -1 }){
+         return <View style={styles.container}>
           <View style = {{justifyContent:'center'}}>
             <Text style={styles.sport}>{props.sport}</Text>
             <Text style={styles.item}> UCSD{'\t'}{props.score}{'\t'}{props.team2}</Text>
             <Text style={styles.time}>{props.date} {props.time}</Text>
           </View>
-
-        </View>
+          </View>
+      }
+      else if({props.gender == 1}){
+        return <View style={styles.container2}>
+          <View style = {{justifyContent:'center'}}>
+            <Text style={styles.sport}>{props.sport}</Text>
+            <Text style={styles.item}> UCSD{'\t'}{props.score}{'\t'}{props.team2}</Text>
+            <Text style={styles.time}>{props.date} {props.time}</Text>
+          </View>
+            </View>
+      }
+      else{
+        return   <View style={styles.container3}>
+          <View style = {{justifyContent:'center'}}>
+            <Text style={styles.sport}>{props.sport}</Text>
+            <Text style={styles.item}> UCSD{'\t'}{props.score}{'\t'}{props.team2}</Text>
+            <Text style={styles.time}>{props.date} {props.time}</Text>
+          </View>
+            </View>
+      }
+    }
       </TouchableOpacity>
     )
 }
@@ -52,6 +73,22 @@ const styles = StyleSheet.create({
     borderTopWidth:0,
     borderBottomWidth:0.5,
     borderLeftColor: 'blue',
+    borderLeftWidth: 10,
+  },
+  container2: {
+    backgroundColor: 'white',
+    borderColor: 'grey',
+    borderTopWidth:0,
+    borderBottomWidth:0.5,
+    borderLeftColor: 'gold',
+    borderLeftWidth: 10,
+  },
+  container3: {
+    backgroundColor: 'white',
+    borderColor: 'grey',
+    borderTopWidth:0,
+    borderBottomWidth:0.5,
+    borderLeftColor: 'green',
     borderLeftWidth: 10,
   },
   logo_item:{

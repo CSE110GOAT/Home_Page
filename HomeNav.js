@@ -45,11 +45,11 @@ export default class HomeNav extends Component {
               return (<MyScene navigator={navigator} title="first" />);
             case 'second':
               return (<Indiv navigator={navigator} title="second" sport={route.sport} location ={route.location} team2 = {route.team2} date = {route.date} time = {route.time} score = {route.score}
-                      stats = {route.stats} notes = {route.notes} latitude = {route.latitude} longitude = {route.longitude}
+                      stats = {route.stats} notes = {route.notes} latitude = {route.latitude} longitude = {route.longitude} gender = {route.gender}
               />);
             case 'third':
               return (<NavFuture navigator={navigator} title="third" sport={route.sport} location ={route.location} team2 = {route.team2}
-                       stats = {route.stats} notes = {route.notes}   latitude = {route.latitude} longitude = {route.longitude}  />);
+                       stats = {route.stats} notes = {route.notes} gender = {route.gender}  latitude = {route.latitude} longitude = {route.longitude}  />);
             case 'fourth':
               return (<NavTournament navigator={navigator} title="fourth"/>);
           }
