@@ -17,7 +17,7 @@ const window = Dimensions.get('window');
 
 const Article = (props) => {
 
-    
+
     return (
       <TouchableOpacity
         onPress={() => {
@@ -33,7 +33,7 @@ const Article = (props) => {
         <View>
           <Text style={styles.sport}>  Posted by {props.source} at {props.time}</Text>
           <Text style={styles.sport}>{props.headline}</Text>
-            
+
           <View style={styles.container}>
             <View style={styles.logo_item}>
               <Image source={{uri: props.picture}} style={styles.logo}/>
@@ -108,4 +108,3 @@ const styles = StyleSheet.create({
 });
 
 export default Article
-

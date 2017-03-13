@@ -1,10 +1,10 @@
-
 import React, { Component } from 'react'
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Image
 } from 'react-native'
 
 export default class Header extends Component{
@@ -16,29 +16,28 @@ export default class Header extends Component{
     }
     render(){
     return (
-      <View style = {styles.head}>
-        <Text style ={styles.title}>
-          {this.state.banner}
-        </Text>
+      <View style = {styles.container} >
+        <Image source={require('../header.png')} style={styles.header_image}/>
       </View>
       );
     }
   }
 
 const styles = StyleSheet.create({
-  head: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: window.width,
-    height: 80,
-    backgroundColor: '#00008b'
+  container:{
+    borderBottomColor:'black',
+    borderBottomWidth:1
   },
   title: {
-  justifyContent: 'center',
-  color: 'yellow',
-  fontSize: 35,
-  fontWeight: 'bold',
-  fontFamily: "Didot"
+    justifyContent: 'center',
+    color: 'yellow',
+    fontSize: 35,
+    fontWeight: 'bold',
+    fontFamily: "Didot"
+  },
+  header_image: {
+    width: window.width,
+    height: 95
   }
 });
 
