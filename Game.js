@@ -32,12 +32,8 @@ const Game = (props) => {
         })
       }}>
         <View style={props.gender}>
-          <View style={styles.logo_item}>
-            <Image source={require('./basketball.png')} style={styles.logo}/>
-            <Text>{"\t\t"}</Text>
-          </View>
           <View>
-            <Text style={styles.item}>UCSD{'\t'}{props.team2}  </Text>
+            <Text style={styles.item}>UCSD{'\t'}vs.{'\t'}{props.team2}  </Text>
             <Text style={styles.time}>{props.date} {props.time} </Text>
           </View>
             </View>
@@ -81,7 +77,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     fontFamily:"HelveticaNeue-Thin",
     textAlign:'center',
-    fontSize: 16
+    fontSize: 16,
+    padding:10
   },
   sport:{
     flexDirection: 'row',
@@ -98,7 +95,8 @@ const styles = StyleSheet.create({
   time: {
     fontSize: 10,
     fontWeight: 'bold',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily:"HelveticaNeue-CondensedBold"
   },
   logo: {
     width: 35,

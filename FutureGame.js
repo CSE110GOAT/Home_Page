@@ -20,15 +20,12 @@ export default class FutureGame extends Component {
   render(){
     return(
       <View>
-        <View style = {styles.SportType} >
-        <Text style ={styles.SportTypeText}> {this.props.sport}</Text>
+        <View >
+        <Text style ={styles.sport}> {this.props.sport}</Text>
         </View>
-        <View style = {styles.ScoreContainer}>
-          <Text style = {styles.ScoreText}>
-          <Image source={require('./school_logos/triton.png')}  style = {styles.logo}/>
-          UCSD{"\t"}{"\t"}{this.props.team2}
-          {"\t"}<Image source={require('./school_logos/usc.png')}  style = {styles.logo}/>
-        </Text>
+        <View style = {styles.container}>
+          <Text style = {styles.item}>  UCSD{"\t"}vs.{"\t"}{this.props.team2}</Text>
+          <Text style = {styles.time}>{this.props.date} {this.props.time}</Text>
         </View>
         <Status/>
       </View>
@@ -37,49 +34,48 @@ export default class FutureGame extends Component {
   }
 }
 
+
 const styles = StyleSheet.create({
-  SportType:{
-    borderWidth: 1,
-    borderColor:  "grey",
-    padding: 5
+  container: {
+    backgroundColor: 'white',
+    justifyContent: 'center',
 
+    borderColor: 'grey',
+    borderWidth:0.5,
+    width:window.width
   },
-  SportTypeText: {
-    fontWeight: 'bold',
-    fontSize: 24,
-    textAlign: 'center'
+  logo_item:{
+    alignItems: 'center'
   },
-  ScoreContainer:{
-    borderWidth: 1,
-    borderColor:  "grey",
+  item:{
+    fontFamily: 'HelveticaNeue-Thin',
     padding: 10,
-    alignItems:'center'
+    borderColor: 'grey',
+    justifyContent: 'center',
+    height: 62,
+   textAlign:'center',
+   fontSize: 24
 
   },
-  ScoreText:{
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  ButtonContainer:{
-    borderWidth: 1,
-    borderColor:  "grey",
-    padding: 10
-  },
-  ButtonText:{
-    fontSize: 18,
+  sport:{
+    fontFamily: 'HelveticaNeue-CondensedBold',
+    backgroundColor: 'gold',
+    borderColor: 'navy',
+    padding: 10,
+    fontSize: 28,
     textAlign: 'center'
   },
-  InfoContainer:{
-    borderWidth: 1,
-    height: 430,
-    borderColor:  "grey"
+  sport_image: {
+    width: 25,
+    height: 50,
+    alignItems: 'center',
+    marginTop: 15
   },
-  logo:{
-    height:60,
-    width:60,
-    //borderColor: "black",
-    //borderWidth:1
+  time: {
+    fontSize: 18,
+    fontFamily: 'HelveticaNeue-CondensedBlack',
+    textAlign: 'center',
+
   }
 });
 

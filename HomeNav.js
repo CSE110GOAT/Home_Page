@@ -49,7 +49,8 @@ export default class HomeNav extends Component {
               />);
             case 'third':
               return (<NavFuture navigator={navigator} title="third" sport={route.sport} location ={route.location} team2 = {route.team2}
-                       stats = {route.stats} notes = {route.notes} gender = {route.gender}  latitude = {route.latitude} longitude = {route.longitude}  />);
+                       stats = {route.stats} notes = {route.notes} gender = {route.gender} date = {route.date} time = {route.time}
+                     latitude = {route.latitude} longitude = {route.longitude}  />);
             case 'fourth':
               return (<NavTournament navigator={navigator} title="fourth"/>);
           }

@@ -36,10 +36,6 @@ const FutureGamePreview = (props) => {
         })
       }}>
         <View style={props.gender}>
-          <View style={styles.logo_item}>
-            <Image source={require('./basketball.png')} style={styles.logo}/>
-            <Text>{"\t\t"}</Text>
-          </View>
           <View>
             <Text style={styles.item}>UCSD{'\t'}{props.team2}  </Text>
             <Text style={styles.time}>{props.date} {props.time} </Text>
@@ -87,7 +83,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   item:{
-    fontFamily:"Menlo",
+    fontFamily:"HelveticaNeue-Thin",
     padding: 10,
     borderColor:'grey',
     borderTopWidth:0,
@@ -96,7 +92,6 @@ const styles = StyleSheet.create({
     borderRightWidth:0.5,
     justifyContent: 'center',
     alignItems: 'center',
-    height: 62,
     textAlign:'center'
   },
   sport:{
@@ -114,7 +109,8 @@ const styles = StyleSheet.create({
   time: {
     fontSize: 10,
     fontWeight: 'bold',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily:"HelveticaNeue-CondensedBold"
   },
   logo: {
     width: 35,

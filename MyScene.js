@@ -166,7 +166,7 @@ navTournament(){
            <ScrollView style = {{flex:1}} >
              <View style = {styles.time}>
                <Text style={styles.title}>
-                 --Today--
+                 --Recent--
                </Text>
              </View>
 
@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
     fontWeight: 'bold',
-    fontFamily: "Didot",
+    fontFamily: "HelveticaNeue-CondensedBold",
 
   }
 });

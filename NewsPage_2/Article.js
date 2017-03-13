@@ -53,15 +53,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     borderColor: 'grey',
-    borderWidth: 2
+    borderWidth: 0.5
   },
   logo_item:{
     alignItems: 'center',
     height: 200
   },
   item:{
-    fontFamily:"Menlo",
-    borderWidth: 0.5,
+  fontFamily:"HelveticaNeue-Thin",
+   borderWidth: 0.5,
     borderColor: 'grey',
     justifyContent: 'center',
     alignItems: 'center',
@@ -69,11 +69,10 @@ const styles = StyleSheet.create({
     textAlign:'center'
   },
   sport:{
-    fontFamily: 'Didot',
+    fontFamily:"HelveticaNeue-Thin",
     backgroundColor: 'gold',
-    fontWeight: 'bold',
     borderColor: 'grey',
-    borderWidth: 2,
+    borderWidth: 0.5,
     textAlign:'center'
   },
   sport_image: {

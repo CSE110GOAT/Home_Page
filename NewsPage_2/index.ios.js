@@ -31,7 +31,7 @@ export default class News_Page extends Component {
         .then((responseJson) => {
               responseJson = responseJson.articles;
             //var size =  Object.keys(responseJson.articles).length
-            for(var i = 0; i < 49 ; i++){
+            for(var i = 0; i < 20 ; i++){
               var oneArticle = responseJson[String(i)];
               this.setState({
                     time: this.state.time.concat([oneArticle[2]]),
@@ -51,9 +51,9 @@ export default class News_Page extends Component {
     render() {
         var listarticles = []
 
-        for(var i = 0; i < 49; i++) {
+        for(var i = 0; i < 10; i++) {
             listarticles.push(
-                <View key={i}>
+                <View  key={i}>
                     <Article
                         time = {this.state.time[i]}
                         source = {this.state.source[i]}
