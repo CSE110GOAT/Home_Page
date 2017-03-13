@@ -44,9 +44,23 @@ export default class Indiv extends Component {
         recap = {this.props.recap}
        notes = {this.props.notes}
        stats = {this.props.stats}
+       latitude = {this.props.latitude}
+       longitude = {this.props.longitude}
           />
         </View>
-        <Status notes = {this.props.notes} stats = {this.props.stats} />
+        <Status        
+         sport = {this.props.sport}
+        location =  {this.props.location}
+        team2 =  {this.props.team2}
+         date =  {this.props.date}
+         time =  {this.props.time}
+        score = {this.props.score}
+        recap = {this.props.recap}
+       notes = {this.props.notes}
+       stats = {this.props.stats}
+       latitude =  {this.props.latitude}
+       longitude = {this.props.longitude}
+        />
       </View>
 
     );

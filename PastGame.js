@@ -77,5 +77,4 @@ const styles = StyleSheet.create({
   }
 });
 
-
 AppRegistry.registerComponent('PastGame', () => PastGame);

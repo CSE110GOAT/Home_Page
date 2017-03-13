@@ -77,6 +77,7 @@ navTournament(){
             this.setState({
             futureGame: this.state.futureGame.concat([
              <View>
+      
                <FutureGamePreview 
                 date= {oneGame[0]} 
                 sport = {oneGame[1]} 
@@ -86,7 +87,9 @@ navTournament(){
                 score = {oneGame[5]}
                 recap = {oneGame[6]}
                 notes = {oneGame[7]}
-                stats = {oneGame[8]}  
+                stats = {oneGame[8]}
+                latitude = {oneGame[9]}
+                longitude = {oneGame[10]}  
                 navigator = {this.props.navigator}      
                 />
               </View>
@@ -127,6 +130,8 @@ navTournament(){
                 recap = {oneGame[6]}
                 notes = {oneGame[7]}
                 stats = {oneGame[8]}  
+                latitude = {oneGame[9]}
+                longitude = {oneGame[10]}  
                 navigator = {this.props.navigator}   
                 />
               </View>

@@ -25,7 +25,9 @@ const Game = (props) => {
         score: props.score,
         recap: props.recap,
        notes: props.notes,
-       stats: props.stats,          
+       stats: props.stats,   
+       latitude: props.latitude,
+       longitude: props.longitude       
         })
       }}>
       

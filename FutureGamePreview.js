@@ -29,7 +29,9 @@ const FutureGamePreview = (props) => {
         score: props.score,
         recap: props.recap,
        notes: props.notes,
-       stats: props.stats,          
+       stats: props.stats,
+       latitude: props.latitude,
+       longitude: props.longitude
         })
       }}>
       
@@ -39,9 +41,8 @@ const FutureGamePreview = (props) => {
             <Text>{"\t\t"}</Text>
           </View>
           <View>
-            <Text style={styles.item}> UCSD {'\t'}{props.team2}  </Text>
+            <Text style={styles.item}>UCSD{'\t'}{props.team2}  </Text>
             <Text style={styles.time}>{props.date} {props.time} </Text>
-
           </View>
         </View>
       </TouchableOpacity>
