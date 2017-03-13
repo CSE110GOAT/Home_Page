@@ -24,8 +24,10 @@ export default class RosterIcon extends Component {
         <View style={styles.grid}>
           <Image
             source = {{uri: this.props.pic}}
-            style = {{width: window.width/3, height: window.height/3 - 50}}
-          />
+            style = {{width: window.width/3, height: window.height/3 - 60, justifyContent: 'flex-end'}}
+          >
+            <Text style = {styles.player} adjustsFontSizeToFit = {true}>{this.props.name}</Text>
+          </Image>
 
         </View>
     );
@@ -35,7 +37,7 @@ export default class RosterIcon extends Component {
 const styles = StyleSheet.create({
   grid: {
     width: window.width/3,
-    height: window.width/3,
+    height: window.height/3 - 60,
     backgroundColor: 'white',
     borderColor: 'gray',
     borderStyle: 'solid',
@@ -46,8 +48,10 @@ const styles = StyleSheet.create({
   },
 
   player: {
-    fontSize: 18,
-    textAlign: 'center',
+    fontSize: 25,
+    textAlign: 'left',
+    backgroundColor: 'navy',
+    color: 'white',
   },
 
 });
