@@ -5,7 +5,10 @@ import {
   Text,
   View,
   ScrollView,
-  Image
+  Image,
+  TouchableHighlight,
+  Linking,
+  JSON
 } from 'react-native';
 
 const Dimensions = require('Dimensions');
@@ -15,20 +18,35 @@ export default class RosterIcon extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fitFont: true
+      fitFont: true,
+      url: String(this.props.bio)
     };
   }
+
+  handleClick = () => {
+    Linking.canOpenURL(this.state.url)
+    .then(supported => {
+      if (supported) {
+        Linking.openURL(this.state.url);
+      } else {
+        console.log('Don\'t know how to open URI: ' + this.state.url);
+      }
+    });
+  };
 
   render() {
     return(
         <View style={styles.grid}>
-          <Image
-            source = {{uri: this.props.pic}}
-            style = {{width: window.width/3, height: window.height/3 - 60, justifyContent: 'flex-end'}}
-          >
-            <Text style = {styles.player} adjustsFontSizeToFit = {true}>{this.props.name}</Text>
-          </Image>
-
+          <TouchableHighlight onPress = {this.handleClick}>
+            <Image
+              source = {{uri: this.props.pic}}
+              style = {styles.picture}
+            >
+              <Text
+                style = {styles.playerName}
+                adjustsFontSizeToFit = {true}>{this.props.name}</Text>
+            </Image>
+          </TouchableHighlight>
         </View>
     );
   }
@@ -47,12 +65,19 @@ const styles = StyleSheet.create({
     borderLeftWidth: 0.5,
   },
 
-  player: {
+  playerName: {
     fontSize: 25,
     textAlign: 'left',
     backgroundColor: 'navy',
     color: 'white',
+    padding: 4
   },
+
+  picture: {
+    width: window.width/3,
+    height: window.height/3 - 60,
+    justifyContent: 'flex-end'
+  }
 
 });
 

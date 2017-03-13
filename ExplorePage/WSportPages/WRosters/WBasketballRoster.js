@@ -19,13 +19,14 @@ export default class WBasketballRoster extends Component {
     super()
     this.state = {
       size: 0,
-      names: []
+      names: [],
+      fullBios: [],
     }
 
-    { this.getRosterSize() }
+    { this.getRoster() }
   }
 
-  getRosterSize() {
+  getRoster() {
      fetch('https://goatbackend110.appspot.com/static/rosters.json')
         .then((response) => response.json())
         .then((responseJson) => {
@@ -37,6 +38,9 @@ export default class WBasketballRoster extends Component {
             this.setState({
               names: this.state.names.concat([
                 responseJson.rosters["12"][i][0]
+              ]),
+              fullBios: this.state.fullBios.concat([
+                responseJson.rosters["12"][i][6]
               ])
             })
           }
@@ -58,19 +62,31 @@ export default class WBasketballRoster extends Component {
         <View style = {styles.roster_row}>
           <TouchableHighlight>
             <View style = {styles.iconLeft}>
-              <RosterIcon pic = {url1} name = {this.state.names[i]} />
+              <RosterIcon
+                pic = {url1}
+                name = {this.state.names[i]}
+                bio = {this.state.fullBios[i]}
+              />
             </View>
           </TouchableHighlight>
 
           <TouchableHighlight>
             <View style = {styles.icon}>
-              <RosterIcon pic = {url2} name = {this.state.names[i+1]} />
+              <RosterIcon
+                pic = {url2}
+                name = {this.state.names[i+1]}
+                bio = {this.state.fullBios[i+1]}
+              />
             </View>
           </TouchableHighlight>
 
           <TouchableHighlight>
             <View style = {styles.iconRight}>
-              <RosterIcon pic = {url3} name = {this.state.names[i+2]} />
+              <RosterIcon
+                pic = {url3}
+                name = {this.state.names[i+2]}
+                bio = {this.state.fullBios[i+2]}
+              />
             </View>
           </TouchableHighlight>
         </View>
