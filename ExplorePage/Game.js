@@ -92,6 +92,12 @@ export default class Game extends Component {
 };
 
 const styles = StyleSheet.create({
+  overall_page: {
+    flex: 1,
+    marginTop: 10,
+    paddingBottom: 50
+  },
+  
   container: {
     backgroundColor: 'white',
     borderColor: 'grey',

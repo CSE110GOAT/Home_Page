@@ -15,6 +15,7 @@ import NavBar from '../NavBar';
 import SportTabBar from '../SportTabBar';
 import ThreeTabSlider from '../ThreeTabSlider';
 import WBasketballRoster from './WRosters/WBasketballRoster';
+import Game from '../Game';
 
 export default class WomenBasketball extends Component {
   constructor() {
@@ -32,7 +33,7 @@ export default class WomenBasketball extends Component {
         />
 
         <ThreeTabSlider
-          games = "Games will go here"
+          games = {<Game index = '12' />}
           roster = {<WBasketballRoster/>}
           stats = "womenBasketball"
         />

@@ -14,7 +14,8 @@ import {
 import NavBar from '../NavBar';
 import SportTabBar from '../SportTabBar';
 import ThreeTabSlider from '../ThreeTabSlider.js';
-import SoftballRoster from './WRosters/SoftballRoster'
+import SoftballRoster from './WRosters/SoftballRoster';
+import Game from '../Game';
 
 export default class Softball extends Component {
   constructor() {
@@ -32,7 +33,7 @@ export default class Softball extends Component {
         />
 
         <ThreeTabSlider
-          games = "Games will go here"
+          games = {<Game index = '17' />}
           roster = {<SoftballRoster/>}
           stats = "softball"
         />

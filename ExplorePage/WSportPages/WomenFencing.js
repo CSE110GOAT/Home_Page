@@ -15,6 +15,7 @@ import NavBar from '../NavBar';
 import SportTabBar from '../SportTabBar';
 import TwoTabSlider from '../TwoTabSlider'
 import WFencingRoster from './WRosters/WFencingRoster'
+import Game from '../Game';
 
 export default class WomenFencing extends Component {
   constructor() {
@@ -32,7 +33,7 @@ export default class WomenFencing extends Component {
         />
 
         <TwoTabSlider
-          games = "Games will go here"
+          games = {<Game index = '14' />}
           roster = {<WFencingRoster/>}
         />
 
