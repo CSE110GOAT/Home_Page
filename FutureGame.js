@@ -15,25 +15,18 @@ import Status from './Status'
 export default class FutureGame extends Component {
   constructor(){
     super()
-    
-    this.state = {
-      sport: "Basketball",
-      team1: "UCSD",
-      score1: 21,
-      team2: "USC",
-      score2: 0
-    }
+
   }
   render(){
     return(
       <View>
         <View style = {styles.SportType} >
-        <Text style ={styles.SportTypeText}> {this.state.sport}</Text>
+        <Text style ={styles.SportTypeText}> {this.props.sport}</Text>
         </View>
         <View style = {styles.ScoreContainer}>
           <Text style = {styles.ScoreText}>
           <Image source={require('./school_logos/triton.png')}  style = {styles.logo}/>
-          {"\t"}{this.state.team1} {this.state.score1} {"\t"}{this.state.score2} {this.state.team2}{"\t"}
+          UCSD{"\t"}{"\t"}{this.props.team2}
           {"\t"}<Image source={require('./school_logos/usc.png')}  style = {styles.logo}/>
         </Text>
         </View>

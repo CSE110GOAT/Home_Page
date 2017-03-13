@@ -16,8 +16,9 @@ import NavBar from './NavBar'
 
 
 export default class NavFuture extends Component {
-  constructor(){
+  constructor(props){
     super()
+
 
   }
 
@@ -34,9 +35,33 @@ export default class NavFuture extends Component {
           </View>
         </TouchableOpacity>
          <View>
-         <FutureGame/>
+         <FutureGame
+        sport = {this.props.sport}
+        location =  {this.props.location}
+        team2 =  {this.props.team2}
+         date =  {this.props.date}
+         time =  {this.props.time}
+        score = {this.props.score}
+        recap = {this.props.recap}
+       notes = {this.props.notes}
+       stats = {this.props.stats}
+       latitude =  {this.props.latitude}
+       longitude = {this.props.longitude}
+         />
         </View>
-        <Status/>
+        <Status
+         sport = {this.props.sport}
+        location =  {this.props.location}
+        team2 =  {this.props.team2}
+         date =  {this.props.date}
+         time =  {this.props.time}
+        score = {this.props.score}
+        recap = {this.props.recap}
+       notes = {this.props.notes}
+       stats = {this.props.stats}
+       latitude =  {this.props.latitude}
+       longitude = {this.props.longitude}
+        />
       </View>
 
     );

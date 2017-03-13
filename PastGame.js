@@ -7,34 +7,31 @@ import {
   ScrollView,
   Image
 } from 'react-native'
+import Game from './Game'
+import MyScene from './MyScene'
 
 const Dimensions = require('Dimensions');
 const window = Dimensions.get('window');
 
-export default class LiveGame extends Component {
-  constructor(){
-    super()
-    this.state = {
-        sport: "Basketball",
-        team1: "UCSD",
-        score1: 21,
-        team2: "USC",
-        score2: 0
+export default class PastGame extends Component{
+    constructor(){
+      super()
+
     }
-  }
-  render() {
+    render(){
     return (
       <View>
-        <Text style={styles.sport}> --{this.state.sport}-- </Text>
+        <Text style={styles.sport}> {this.props.sport} </Text>
         <View style={styles.container}>
           <View>
-            <Text style={styles.item}><Image source={require('./school_logos/triton.png')} style={styles.sport_image}/> {this.state.team1}  {this.state.score1}{"\t"} {this.state.score2}  {this.state.team2}  <Image source={require('./school_logos/usc.png')} style={styles.sport_image}/></Text>
+            <Text style={styles.item}>UCSD {this.props.score} {this.props.team2}</Text>
+            <Text style = {styles.time}> {this.props.date} {this.props.time} </Text>
           </View>
         </View>
       </View>
-    );
-  }
+    )}
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -49,20 +46,21 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   item:{
-    fontFamily:"Menlo",
+    fontFamily: 'HelveticaNeue-Thin',
     padding: 10,
     borderColor: 'grey',
     justifyContent: 'center',
     height: 62,
-    textAlign:'center'
+   textAlign:'center',
+   fontSize: 24
+
   },
   sport:{
-    fontFamily: 'Didot',
+    fontFamily: 'HelveticaNeue-CondensedBold',
     backgroundColor: 'gold',
-    fontWeight: 'bold',
     borderColor: 'navy',
     padding: 10,
-    fontSize: 20,
+    fontSize: 28,
     textAlign: 'center'
   },
   sport_image: {
@@ -72,18 +70,11 @@ const styles = StyleSheet.create({
     marginTop: 15
   },
   time: {
-    fontSize: 10,
-    fontWeight: 'bold',
-    textAlign: 'center'
-  },
-  logo: {
-    width: 35,
-    height: 35,
-    marginTop: 10,
-    marginRight:15,
-    marginLeft: 15,
-    justifyContent: 'center'
+    fontSize: 18,
+    fontFamily: 'HelveticaNeue-CondensedBlack',
+    textAlign: 'center',
+
   }
 });
 
-AppRegistry.registerComponent('LiveGame', () => LiveGame);
+AppRegistry.registerComponent('PastGame', () => PastGame);

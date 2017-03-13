@@ -6,41 +6,48 @@ import {
   Text,
   View,
   ScrollView,
-  Image
+  Image,
+  Navigator,
+  TouchableOpacity
 } from 'react-native'
 
-export default class FutureGamePreview extends Component {
-  constructor(){
-    super()
-    this.state = {
-        sport: "Basketball",
-        team1: "UCSD",
-        score1: 0,
-        team2: "USC",
-        score2: 0
-    }
-  }
-  render() {
-    return (
-      <View>
+
+
+
+
+const FutureGamePreview = (props) => {
+    return(
+
+      <TouchableOpacity activeOpacity={0.5} onPress= {() => {
+      props.navigator.push({
+        id: 'third',
+        sport: props.sport,
+        location: props.location,
+        team2: props.team2,
+         date: props.date,
+         time: props.time,
+        score: props.score,
+        recap: props.recap,
+       notes: props.notes,
+       stats: props.stats,
+       latitude: props.latitude,
+       longitude: props.longitude
+        })
+      }}>
+
         <View style={styles.container}>
           <View style={styles.logo_item}>
             <Image source={require('./basketball.png')} style={styles.logo}/>
             <Text>{"\t\t"}</Text>
           </View>
           <View>
-            <Text style={styles.item}><Image source={require('./school_logos/triton.png')} style={styles.sport_image}/> {this.state.team1}  {this.state.score1}{"\t"} {this.state.score2}  {this.state.team2}  <Image source={require('./school_logos/usc.png')} style={styles.sport_image}/></Text>
-          </View>
-          <View>
-            <Text style={styles.time}>{"\n"}       00:00</Text>
-            <Text style={styles.time}>       1st</Text>
-            <Text style={styles.time}>{"\t"}(G.M?)</Text>
+            <Text style={styles.item}>UCSD{'\t'}{props.team2}  </Text>
+            <Text style={styles.time}>{props.date} {props.time} </Text>
           </View>
         </View>
-      </View>
-    );
+      </TouchableOpacity>
+    )
   }
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -97,4 +104,4 @@ const styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('FutureGamePreview', () => FutureGamePreview);
+export default FutureGamePreview

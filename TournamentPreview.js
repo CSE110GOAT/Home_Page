@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import {
   AppRegistry,
@@ -9,36 +8,25 @@ import {
   Image
 } from 'react-native'
 
-export default class TournamentPreview extends Component {
-  constructor(){
-    super()
-    this.state = {
-        sport: "Golf",
-        name : "TorreyPinesInvitational",
-        time: "12:00 PM"
-    }
-  }
-  render() {
-    return (
+
+const TournamentPreview = (props) => {
+    return(
       <View>
         <View style={styles.container}>
           <View style={styles.logo_item}>
-            <Image source={require('./basketball.png')} style = {styles.logo}/>
+            <Image source={require('./basketball.png')} style={styles.logo}/>
             <Text>{"\t\t"}</Text>
           </View>
-          <View style = {styles.box}>
-            <Text style={styles.item}>{'\n'}{this.state.name} </Text>
-        
+          <View>
+            <Text style={styles.item}> {props.name}</Text>
           </View>
-          <View style = {styles.timeBox}>
-
-             <Text style={styles.time}>{this.state.time}</Text> 
-         </View>
+          <View>
+            <Text style={styles.time}>{props.date}</Text>
+          </View>
         </View>
       </View>
-    );
+    )
   }
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -93,4 +81,4 @@ const styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('FutureGamePreview', () => FutureGamePreview);
+export default TournamentPreview

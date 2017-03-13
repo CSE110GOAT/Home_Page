@@ -1,41 +1,26 @@
 import React, { Component } from 'react';
-import { AppRegistry, View, StyleSheet, Text, ScrollView } from 'react-native';
+import { View, StyleSheet, Text, AppRegistry, WebView, TouchableOpacity } from 'react-native';
 import { TabViewAnimated, TabBar } from 'react-native-tab-view';
+import Map from './Map'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white'
-  },
-  page: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+import Stats from './ExplorePage/Stats';
 
-  },
-  indicator:{
-    backgroundColor: 'white'
-  },
-  tabbar:{
-    backgroundColor:'black'
-  },
-  tab:{
-    backgroundColor:"navy",
-    opacity:1,
-    borderRightWidth:0.25,
-    borderColor:'white'
+const Dimensions = require('Dimensions');
+const window = Dimensions.get('window');
+
+export default class Status extends Component {
+  constructor(props) {
+    super(props);
+
   }
-});
 
-
-
-export default class TabViewExample extends Component {
   state = {
     index: 0,
+    sport: this.props.stats,
     routes: [
       { key: '1', title: 'STATS' },
       { key: '2', title: 'NOTES' },
-      { key: '3', title: 'MAP'},
+      { key: '3', title: 'MAPS' },
     ],
   };
 
@@ -44,38 +29,41 @@ export default class TabViewExample extends Component {
   };
 
   _renderHeader = (props) => {
-    return <TabBar  {...props} 
-      indicatorStyle={styles.indicator}
-      tabStyle={styles.tab}
-      style={styles.TabBar}
+    return <TabBar {...props}
+      style = {styles.tabbar}
+      indicatorStyle = {styles.indicator}
+      tabStyle = {styles.tab}
     />;
-
   };
+
+
 
   _renderScene = ({ route }) => {
-    switch (route.key) {
-    case '1':
-      return <View style={[ styles.page, { backgroundColor: '#ff4081' } ]}>
-          <ScrollView>
-            <Text> This is where the stats will go </Text>
-          </ScrollView>
-      </View>;
+
+  switch (route.key) {
+    case '3':
+      return <Map location = {this.props.location}
+      latitude = {this.props.latitude}
+      longitude = {this.props.longitude}
+      />
+
+
     case '2':
-      return <View style={[ styles.page, { backgroundColor: '#673ab7' } ]}>
-          <ScrollView>
-            <Text> This is where the notes will go </Text>
-          </ScrollView>
-      </View>;
-      case '3':
-      return <View style={[ styles.page, { backgroundColor: 'white' } ]}>
-          <ScrollView>
-            <Text> This is where the map will go </Text>
-          </ScrollView>
-      </View>;
+      return <View style={styles.page}>
+          <Stats url = {this.props.stats} />
+
+        </View>
+
+    case '1':
+      return <View style={styles.page}>
+          <Stats url = {this.props.stats} />
+        </View>
+
     default:
       return null;
-    }
-  };
+    };
+  }
+
 
   render() {
     return (
@@ -88,7 +76,37 @@ export default class TabViewExample extends Component {
       />
     );
   }
-}
+};
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  page: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+  },
+
+  indicator: {
+    backgroundColor: 'gold'
+  },
+
+  tab: {
+    opacity: 1,
+  },
+
+  webpage: {
+    marginTop: 20,
+    maxHeight: window.height,
+    width: window.width,
+    flex: 1
+  },
+
+  tabbar: {
+    backgroundColor: 'navy'
+  }
+});
 
 AppRegistry.registerComponent('Status', () => Status);
