@@ -14,7 +14,8 @@ import {
 import NavBar from '../NavBar';
 import SportTabBar from '../SportTabBar';
 import TwoTabSlider from '../TwoTabSlider';
-import WXCRoster from './WRosters/WXCRoster'
+import WXCRoster from './WRosters/WXCRoster';
+import Game from '../Game';
 
 export default class WomenXC extends Component {
   constructor() {
@@ -32,7 +33,7 @@ export default class WomenXC extends Component {
         />
 
         <TwoTabSlider
-          games = "Games will go here"
+          games = {<Game index = '13' />}
           roster = {<WXCRoster/>}
         />
 

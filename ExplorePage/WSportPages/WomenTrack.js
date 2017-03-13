@@ -15,6 +15,7 @@ import NavBar from '../NavBar';
 import SportTabBar from '../SportTabBar';
 import TwoTabSlider from '../TwoTabSlider';
 import WTrackRoster from './WRosters/WTrackRoster';
+import Game from '../Game';
 
 export default class WomenTrack extends Component {
   constructor() {
@@ -32,7 +33,7 @@ export default class WomenTrack extends Component {
         />
 
         <TwoTabSlider
-          games = "Track and Field Meets will go here"
+          games = {<Game index = '20' />}
           roster = {<WTrackRoster/>}
         />
 
