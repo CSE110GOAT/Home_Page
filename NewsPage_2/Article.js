@@ -27,7 +27,7 @@ export default class Article extends Component {
         url: 'http://www.ucsdtritons.com/ViewArticle.dbml?DB_OEM_ID=5800&ATCLID=211501690'
     }
   }
-    
+
   handleClick = () => {
     Linking.canOpenURL(this.state.url).then(supported => {
       if (supported) {
@@ -37,8 +37,8 @@ export default class Article extends Component {
       }
     });
   };
-    
-    
+
+
   render() {
     return (
       <TouchableOpacity
