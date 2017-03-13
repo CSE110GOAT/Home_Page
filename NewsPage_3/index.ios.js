@@ -19,12 +19,12 @@ export default class News_Page extends Component {
             picture: [],
             source: [],
         }
-        
-        
+
+
         {this.getArticledata()}
     }
-    
-    
+
+
     getArticledata() {
         fetch('https://goatbackend110.appspot.com/static/news.json')
         .then((response) => response.json())
@@ -46,11 +46,11 @@ export default class News_Page extends Component {
             console.error(error);
         });
     }
-    
-    
+
+
     render() {
         var listarticles = []
-        
+
         for(var i = 0; i < 49; i++) {
             listarticles.push(
                 <View>
@@ -64,17 +64,17 @@ export default class News_Page extends Component {
                 </View>
             );
         }
-              
+
         return (
             <View style={{flex: 1}}>
                 <View style = {styles.head}>
                     <Header/>
                 </View>
-                
+
                 <ScrollView>
                     {listarticles}
                 </ScrollView>
-                
+
 
                 <View style={{
                     flex: 1,
@@ -82,31 +82,31 @@ export default class News_Page extends Component {
                     justifyContent: 'space-around',
                     alignItems: 'flex-end'
                 }}>
-                
+
                     <View style={styles.home_icon}>
                         <Image
-                        source={require('./home_bar_icons/home.png')}
+                        source={require('../home_bar_icons/home.png')}
                         style={styles.home_pic}
                         />
                     </View>
-            
+
                     <View style={styles.home_icon}>
                         <Image
-                        source={require('./home_bar_icons/magnifying_glass.png')}
+                        source={require('../home_bar_icons/magnifying_glass.png')}
                         style={styles.home_pic}
                         />
                     </View>
-            
+
                     <View style={styles.home_icon}>
                         <Image
-                        source={require('./home_bar_icons/social.png')}
+                        source={require('../home_bar_icons/social.png')}
                         style={styles.home_pic}
                         />
                     </View>
-            
+
                     <View style={styles.curr_icon}>
                         <Image
-                        source={require('./home_bar_icons/news.png')}
+                        source={require('../home_bar_icons/news.png')}
                         style={styles.home_pic}
                         />
                     </View>
@@ -138,18 +138,18 @@ const styles = StyleSheet.create({
                                  justifyContent: 'center',
                                  alignItems: 'center',
                                  },
-                                 
+
                                  sport_title: {
                                  fontSize: 18,
                                  textAlign: 'center',
                                  },
-                                 
+
                                  sport_pic: {
                                  width: window.width/3 - 50,
                                  height: window.width/3 - 50,
                                  alignSelf: 'center',
                                  },
-                                 
+
                                  home_icon: {
                                  width: window.width/4,
                                  height: window.width/4 - 45,
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
                                  borderBottomWidth: 0,
                                  justifyContent: 'center'
                                  },
-                                 
+
                                  curr_icon: {
                                  width: window.width/4,
                                  height: window.width/4 - 45,
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
                                  borderBottomWidth: 1,
                                  justifyContent: 'center'
                                  },
-                                 
+
                                  home_pic: {
                                  width: window.width/4 - 60,
                                  height: window.width/4 - 60,
@@ -182,4 +182,4 @@ const styles = StyleSheet.create({
 
                                  });
 
-AppRegistry.registerComponent('FirstProject', () => News_Page);
+AppRegistry.registerComponent('News_Page', () => News_Page);

@@ -73,6 +73,17 @@ navTournament(){
      //  var size =  Object.keys(responseJson).length
        for(var i = 0; i < 30 ; i++){
          var oneGame = responseJson[String(i)];
+           var gender = oneGame[12]
+           var cont = st.container1
+            if( gender == -1 ) {
+              cont = st.container1
+            }
+            else if ( gender == 1) {
+              cont = st.container2
+            }
+            else {
+              cont = st.container3
+            }
          if(oneGame[5] == ""){
             this.setState({
             futureGame: this.state.futureGame.concat([
@@ -90,7 +101,7 @@ navTournament(){
                 stats = {oneGame[8]}
                 latitude = {oneGame[9]}
                 longitude = {oneGame[10]}
-                gender = {oneGame[12]}
+                gender = {cont}
                 navigator = {this.props.navigator}
                 />
               </View>
@@ -133,7 +144,7 @@ navTournament(){
                 stats = {oneGame[8]}
                 latitude = {oneGame[9]}
                 longitude = {oneGame[10]}
-                gender = {oneGame[12]}
+                gender = {cont}
                 navigator = {this.props.navigator}
                 />
               </View>
@@ -210,4 +221,29 @@ const styles = StyleSheet.create({
   }
 });
 
+const st = StyleSheet.create({
+  container1: {
+    backgroundColor: 'white',
+    borderColor: 'grey',
+    borderTopWidth:0,
+    borderBottomWidth:0.5,
+    borderLeftColor: 'blue',
+    borderLeftWidth: 10,
+  },
+  container2: {
+    backgroundColor: 'white',
+    borderColor: 'grey',
+    borderTopWidth:0,
+    borderBottomWidth:0.5,
+    borderLeftColor: 'gold',
+    borderLeftWidth: 10,
+  },
+  container3: {
+    backgroundColor: 'white',
+    borderColor: 'grey',
+    borderTopWidth:0,
+    borderBottomWidth:0.5,
+    borderLeftColor: 'green',
+    borderLeftWidth: 10,
+  }})
 AppRegistry.registerComponent('MyScene', () => MyScene);

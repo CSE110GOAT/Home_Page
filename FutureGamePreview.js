@@ -35,8 +35,7 @@ const FutureGamePreview = (props) => {
        gender: props.gender
         })
       }}>
-      if({props.gender == 1}){
-        <View style={styles.container}>
+        <View style={props.gender}>
           <View style={styles.logo_item}>
             <Image source={require('./basketball.png')} style={styles.logo}/>
             <Text>{"\t\t"}</Text>
@@ -46,31 +45,6 @@ const FutureGamePreview = (props) => {
             <Text style={styles.time}>{props.date} {props.time} </Text>
           </View>
             </View>
-        }
-      else if({props.gender == 1}){
-        <View style={styles.container2}>
-          <View style={styles.logo_item}>
-            <Image source={require('./basketball.png')} style={styles.logo}/>
-            <Text>{"\t\t"}</Text>
-          </View>
-          <View>
-            <Text style={styles.item}>UCSD{'\t'}{props.team2}  </Text>
-            <Text style={styles.time}>{props.date} {props.time} </Text>
-          </View>
-            </View>
-      }
-      else{
-        <View style={styles.container3}>
-          <View style={styles.logo_item}>
-            <Image source={require('./basketball.png')} style={styles.logo}/>
-            <Text>{"\t\t"}</Text>
-          </View>
-          <View>
-            <Text style={styles.item}>UCSD{'\t'}{props.team2}  </Text>
-            <Text style={styles.time}>{props.date} {props.time} </Text>
-          </View>
-          </View>
-      }
       </TouchableOpacity>
     )
   }

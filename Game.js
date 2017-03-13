@@ -12,7 +12,7 @@ import {
 
 
 const Game = (props) => {
-   return(
+    return(
 
       <TouchableOpacity activeOpacity={0.5} onPress= {() => {
       props.navigator.push({
@@ -20,8 +20,8 @@ const Game = (props) => {
         sport: props.sport,
         location: props.location,
         team2: props.team2,
-        date: props.date,
-        time: props.time,
+         date: props.date,
+         time: props.time,
         score: props.score,
         recap: props.recap,
        notes: props.notes,
@@ -31,39 +31,19 @@ const Game = (props) => {
        gender: props.gender
         })
       }}>
-
- getComp = () =>{
-      if({props.gender == -1 }){
-         return <View style={styles.container}>
-          <View style = {{justifyContent:'center'}}>
-            <Text style={styles.sport}>{props.sport}</Text>
-            <Text style={styles.item}> UCSD{'\t'}{props.score}{'\t'}{props.team2}</Text>
-            <Text style={styles.time}>{props.date} {props.time}</Text>
+        <View style={props.gender}>
+          <View style={styles.logo_item}>
+            <Image source={require('./basketball.png')} style={styles.logo}/>
+            <Text>{"\t\t"}</Text>
           </View>
-          </View>
-      }
-      else if({props.gender == 1}){
-        return <View style={styles.container2}>
-          <View style = {{justifyContent:'center'}}>
-            <Text style={styles.sport}>{props.sport}</Text>
-            <Text style={styles.item}> UCSD{'\t'}{props.score}{'\t'}{props.team2}</Text>
-            <Text style={styles.time}>{props.date} {props.time}</Text>
+          <View>
+            <Text style={styles.item}>UCSD{'\t'}{props.team2}  </Text>
+            <Text style={styles.time}>{props.date} {props.time} </Text>
           </View>
             </View>
-      }
-      else{
-        return   <View style={styles.container3}>
-          <View style = {{justifyContent:'center'}}>
-            <Text style={styles.sport}>{props.sport}</Text>
-            <Text style={styles.item}> UCSD{'\t'}{props.score}{'\t'}{props.team2}</Text>
-            <Text style={styles.time}>{props.date} {props.time}</Text>
-          </View>
-            </View>
-      }
-    }
       </TouchableOpacity>
     )
-}
+  }
 
 
 const styles = StyleSheet.create({
