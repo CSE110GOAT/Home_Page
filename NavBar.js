@@ -12,7 +12,7 @@ import {
   Navigator
 } from 'react-native'
 
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 const myIcon = (<Icon name="rocket" size={30} color="#900" />)
 
 import Indiv from './Indiv'
@@ -40,8 +40,8 @@ export default class NavBar extends Component{
         unselectedItemTintColor = "black"
          >
           <Icon.TabBarItemIOS
-            iconName="ios-home-outline"
-            selectedIconName = "ios-home"
+            iconName="home-outline"
+            selectedIconName = "home"
             selected={this.state.selectedTab === 'home'}
             onPress={() => {
             this.setState({
@@ -52,8 +52,8 @@ export default class NavBar extends Component{
           </Icon.TabBarItemIOS>
 
           <Icon.TabBarItemIOS
-            iconName="ios-basketball-outline"
-            selectedIconName = "ios-basketball"
+            iconName="magnify"
+            selectedIconName = "magnify"
             selected={this.state.selectedTab === 'explore'}
             onPress={() => {
             this.setState({
@@ -64,8 +64,8 @@ export default class NavBar extends Component{
           </Icon.TabBarItemIOS>
 
           <Icon.TabBarItemIOS
-            iconName="ios-people-outline"
-            selectedIconName = "ios-people"
+            iconName="facebook"
+            selectedIconName = "facebook"
             selected={this.state.selectedTab === 'social'}
             onPress={() => {
             this.setState({
@@ -76,8 +76,8 @@ export default class NavBar extends Component{
           </Icon.TabBarItemIOS>
 
           <Icon.TabBarItemIOS
-            iconName="ios-information-circle-outline"
-            selectedIconName = "ios-information-circle"
+            iconName="newspaper"
+            selectedIconName = "newspaper"
             selected={this.state.selectedTab === 'news'}
             onPress={() => {
             this.setState({

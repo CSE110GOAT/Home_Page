@@ -243,7 +243,7 @@ const st = StyleSheet.create({
     borderColor: 'grey',
     borderTopWidth:0,
     borderBottomWidth:0.5,
-    borderLeftColor: 'green',
+    borderLeftColor: 'silver',
     borderLeftWidth: 10,
   }})
 AppRegistry.registerComponent('MyScene', () => MyScene);
