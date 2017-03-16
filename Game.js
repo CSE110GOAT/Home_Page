@@ -18,7 +18,7 @@ const Game = (props) => {
       props.navigator.push({
         id: 'second',
         sport: props.sport,
-        location: props.location,
+        loc: props.loc,
         team2: props.team2,
          date: props.date,
          time: props.time,

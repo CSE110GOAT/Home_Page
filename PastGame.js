@@ -9,6 +9,7 @@ import {
 } from 'react-native'
 import Game from './Game'
 import MyScene from './MyScene'
+import Status from './Status'
 
 const Dimensions = require('Dimensions');
 const window = Dimensions.get('window');

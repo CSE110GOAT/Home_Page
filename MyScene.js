@@ -93,7 +93,7 @@ navTournament(){
                 date= {oneGame[0]}
                 sport = {oneGame[1]}
                 team2 = {oneGame[2]}
-                location = {oneGame[3]}
+                loc = {oneGame[3]}
                 time = {oneGame[4]}
                 score = {oneGame[5]}
                 recap = {oneGame[6]}
@@ -136,7 +136,7 @@ navTournament(){
                 date= {oneGame[0]}
                 sport = {oneGame[1]}
                 team2 = {oneGame[2]}
-                location = {oneGame[3]}
+                loc = {oneGame[3]}
                 time = {oneGame[4]}
                 score = {oneGame[5]}
                 recap = {oneGame[6]}

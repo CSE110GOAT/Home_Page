@@ -22,7 +22,7 @@ const FutureGamePreview = (props) => {
       props.navigator.push({
         id: 'third',
         sport: props.sport,
-        location: props.location,
+        loc: props.loc,
         team2: props.team2,
          date: props.date,
          time: props.time,
@@ -37,7 +37,7 @@ const FutureGamePreview = (props) => {
       }}>
         <View style={props.gender}>
           <View>
-            <Text style={styles.item}>UCSD{'\t'}{props.team2}  </Text>
+            <Text style={styles.item}>UCSD{'\t'}vs.{'\t'}{props.team2}  </Text>
             <Text style={styles.time}>{props.date} {props.time} </Text>
           </View>
             </View>

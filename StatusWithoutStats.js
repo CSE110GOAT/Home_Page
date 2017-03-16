@@ -8,7 +8,7 @@ import Stats from './ExplorePage/Stats';
 const Dimensions = require('Dimensions');
 const window = Dimensions.get('window');
 
-export default class Status extends Component {
+export default class StatusWithoutStats extends Component {
   constructor(props) {
     super(props);
 
@@ -18,9 +18,8 @@ export default class Status extends Component {
     index: 0,
     sport: this.props.stats,
     routes: [
-      { key: '1', title: 'STATS' },
-      { key: '2', title: 'NOTES' },
-      { key: '3', title: 'MAPS' },
+      { key: '1', title: 'NOTES' },
+      { key: '2', title: 'MAPS' },
     ],
   };
 
@@ -41,22 +40,17 @@ export default class Status extends Component {
   _renderScene = ({ route }) => {
 
   switch (route.key) {
-    case '3':
-      return <Map loc = {this.props.loc}
+    case '2':
+      return <Map
+      loc = {this.props.loc}
       latitude = {this.props.latitude}
       longitude = {this.props.longitude}
       />
 
-
-    case '2':
+    case '1':
       return <View style={styles.page}>
           <Stats url = {this.props.notes} />
 
-        </View>
-
-    case '1':
-      return <View style={styles.page}>
-          <Stats url = {this.props.stats} />
         </View>
 
     default:
@@ -109,4 +103,4 @@ const styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('Status', () => Status);
+AppRegistry.registerComponent('StatusWithoutStats', () => StatusWithoutStats);

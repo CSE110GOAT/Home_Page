@@ -11,12 +11,16 @@ import Game from './Game'
 import NavFuture from './NavFuture'
 import FutureGamePreview from './FutureGamePreview'
 import Status from './Status'
+import StatusWithoutStats from './StatusWithoutStats'
+import StatusWithoutBoth from './StatusWithoutBoth'
 
 export default class FutureGame extends Component {
   constructor(){
     super()
 
   }
+
+
   render(){
     return(
       <View>
@@ -24,10 +28,9 @@ export default class FutureGame extends Component {
         <Text style ={styles.sport}> {this.props.sport}</Text>
         </View>
         <View style = {styles.container}>
-          <Text style = {styles.item}>  UCSD{"\t"}vs.{"\t"}{this.props.team2}</Text>
+          <Text style = {styles.item}>  UCSD {"\t"}vs.{"\t"}{this.props.team2}</Text>
           <Text style = {styles.time}>{this.props.date} {this.props.time}</Text>
         </View>
-        <Status/>
       </View>
 
     );

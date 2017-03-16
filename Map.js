@@ -17,11 +17,14 @@ export default class Maps extends Component {
 
   render() {
     return (
+      <View style={{flex:1}}>
+      <Text style={{textAlign: 'center'}}>{this.props.loc}</Text>
       <MapView
         style={{flex:1}}
         region={this.state.region}
         annotations={this.state.annotations}
       />
+      </View>
     );
   }
 }
