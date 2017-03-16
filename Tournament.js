@@ -15,20 +15,17 @@ const window = Dimensions.get('window');
 export default class Tournament extends Component {
   constructor(){
     super()
-    this.state = {
-      sport: 'Golf',
-      name: 'Torrey Pines Invitational',
-      date: '12:00'
-    }
+
   }
   render() {
     return (
       <View>
-        <Text style={styles.sport}> --{this.state.sport}-- </Text>
-        <View style={styles.container}>
-          <View>
-              <Text style={styles.item}>{this.state.name}{'\n'}{this.state.date}</Text>
-          </View>
+        <View >
+        <Text style ={styles.sport}> {this.props.sport}</Text>
+        </View>
+        <View style = {styles.container}>
+          <Text style = {styles.item}> {this.props.team2}</Text>
+          <Text style = {styles.time}>{this.props.date} {this.props.time}</Text>
         </View>
       </View>
     );
@@ -39,7 +36,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
     justifyContent: 'center',
-    flexDirection: 'row',
+
     borderColor: 'grey',
     borderWidth:0.5,
     width:window.width

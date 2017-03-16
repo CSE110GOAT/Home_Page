@@ -13,6 +13,8 @@ import Header from './Header'
 import Status from './Status'
 import NavBar from './NavBar'
 import Tournament from './Tournament'
+import StatusWithoutStats from './StatusWithoutStats'
+import StatusWithoutBoth from './StatusWithoutBoth'
 
 
 export default class NavTournament extends Component {
@@ -24,6 +26,71 @@ export default class NavTournament extends Component {
   navBack() {
     this.props.navigator.pop()
   }
+  getStatus = () => {
+    if(this.props.stats == "") {
+              if(this.props.notes == "") {
+                return (<StatusWithoutBoth
+                          sport = {this.props.sport}
+                         loc =  {this.props.loc}
+                         team2 =  {this.props.team2}
+                          date =  {this.props.date}
+                          time =  {this.props.time}
+                         score = {this.props.score}
+                         recap = {this.props.recap}
+                        notes = {this.props.notes}
+                        stats = {this.props.stats}
+                        latitude =  {this.props.latitude}
+                        longitude = {this.props.longitude}
+                        gender = {this.props.gender}/>);
+              } else {
+                return (<StatusWithoutStats
+                    sport = {this.props.sport}
+                   location =  {this.props.loc}
+                   team2 =  {this.props.team2}
+                    date =  {this.props.date}
+                    time =  {this.props.time}
+                   score = {this.props.score}
+                   recap = {this.props.recap}
+                  notes = {this.props.notes}
+                  stats = {this.props.stats}
+                  latitude =  {this.props.latitude}
+                  longitude = {this.props.longitude}
+                  gender = {this.props.gender}/>);
+          }
+    } else if (this.props.notes == "") {
+      return (<StatusWithoutNotes
+          sport = {this.props.sport}
+         loc =  {this.props.loc}
+         team2 =  {this.props.team2}
+          date =  {this.props.date}
+          time =  {this.props.time}
+         score = {this.props.score}
+         recap = {this.props.recap}
+        notes = {this.props.notes}
+        stats = {this.props.stats}
+        latitude =  {this.props.latitude}
+        longitude = {this.props.longitude}
+        gender = {this.props.gender}/>);
+
+    } else {
+
+      return (<Status
+          sport = {this.props.sport}
+         loc =  {this.props.loc}
+         team2 =  {this.props.team2}
+          date =  {this.props.date}
+          time =  {this.props.time}
+         score = {this.props.score}
+         recap = {this.props.recap}
+        notes = {this.props.notes}
+        stats = {this.props.stats}
+        latitude =  {this.props.latitude}
+        longitude = {this.props.longitude}
+        gender = {this.props.gender}/>);
+
+    }
+  }
+
 
   render() {
     return (
@@ -34,9 +101,21 @@ export default class NavTournament extends Component {
           </View>
         </TouchableOpacity>
          <View>
-         <Tournament/>
+         <Tournament
+             sport = {this.props.sport}
+             loc =  {this.props.loc}
+             team2 =  {this.props.team2}
+              date =  {this.props.date}
+              time =  {this.props.time}
+             score = {this.props.score}
+             recap = {this.props.recap}
+            notes = {this.props.notes}
+            stats = {this.props.stats}
+            latitude =  {this.props.latitude}
+            longitude = {this.props.longitude}
+            gender = {this.props.gender}/>
         </View>
-        <Status/>
+        {this.getStatus()}
       </View>
 
     );

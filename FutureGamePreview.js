@@ -40,7 +40,7 @@ const FutureGamePreview = (props) => {
             <Text style={styles.item}>UCSD{'\t'}vs.{'\t'}{props.team2}  </Text>
             <Text style={styles.time}>{props.date} {props.time} </Text>
           </View>
-            </View>
+        </View>
       </TouchableOpacity>
     )
   }

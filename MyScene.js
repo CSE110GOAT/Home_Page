@@ -32,11 +32,7 @@ export default class MyScene extends Component {
       game : [],
       futureGame: [],
       tournamentGame : [],
-      sceneSport: "baseSport",
-      sceneTeam1: "baseTeam1",
-      sceneTeam2: "baseTeam2",
-      sceneScore: "baseScore",
-      sceneDate: "baseDate"
+
     }
 
    {this.getGamedata()}
@@ -45,11 +41,7 @@ export default class MyScene extends Component {
   navIndiv() {
     this.props.navigator.push({
       id: 'second',
-      //sport: this.state.sceneSport,
-      //team1: this.state.sceneTeam1,
-      //team2: this.state.sceneTeam2,
-      //score: this.state.SceneScore,
-      //date: this.state.sceneDate
+
     })
   }
 
@@ -58,10 +50,7 @@ export default class MyScene extends Component {
 navTournament(){
   this.props.navigator.push({
       id:'fourth',
-      sport: this.state.sceneSport,
-      team1: this.state.sceneTeam1,
-      team2: this.state.sceneTeam2,
-      score: this.state.SceneScore
+
   })
 }
 
@@ -84,7 +73,37 @@ navTournament(){
             else {
               cont = st.container3
             }
-         if(oneGame[5] == ""){
+/*
+            // WHAT IS THE CHECK FOR THIS??????
+            if(oneGame[11]== 1 ){
+
+               this.setState({
+               tournamentGame: this.state.tournamentGame.concat([
+                   <View key ={i}>
+                      <TournamentPreview
+                      date= {oneGame[0]}
+                      sport = {oneGame[1]}
+                      team2 = {oneGame[2]}
+                      loc = {oneGame[3]}
+                      time = {oneGame[4]}
+                      score = {oneGame[5]}
+                      recap = {oneGame[6]}
+                      notes = {oneGame[7]}
+                      stats = {oneGame[8]}
+                      latitude = {oneGame[9]}
+                      longitude = {oneGame[10]}
+                      gender = {cont}
+                      navigator = {this.props.navigator}
+                       />
+                 </View>
+               ])
+             })
+
+             continue;
+            }
+*/
+          // CHECK IF FUTURE GAME
+          if(oneGame[5] == ""){
             this.setState({
             futureGame: this.state.futureGame.concat([
              <View key = {i}>
@@ -109,26 +128,9 @@ navTournament(){
           })
             continue;
           }
-        /*
-         else if(() ){
-            /*
-            this.setState({
-            tournamentGame: this.state.tournamentGame.concat([
-              <TouchableOpacity activeOpacity={1} onPress={this.navTournament.bind(this)}>
-             <View>
-               <TournamentPreview
-                sport = {oneGame[1]}
-                name = {oneGame[2]}
-                date = {oneGame[0]}
-                />
-              </View>
-           </TouchableOpacity>
-            ])
-          })
 
-          continue;
-         }
-         */
+          // CHECK IF PAST/CURRENT GAME
+
           this.setState({
             game: this.state.game.concat([
              <View key = {i}>
@@ -179,14 +181,6 @@ navTournament(){
              </View>
 
                 {this.state.futureGame}
-
-
-              <View style = {styles.time}>
-               <Text style={styles.title}>
-                 --Tournament--
-               </Text>
-             </View>
-             {this.state.tournamentGame}
 
            </ScrollView>
 

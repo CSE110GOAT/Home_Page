@@ -52,7 +52,9 @@ export default class HomeNav extends Component {
                        stats = {route.stats} notes = {route.notes} gender = {route.gender} date = {route.date} time = {route.time}
                      latitude = {route.latitude} longitude = {route.longitude}  />);
             case 'fourth':
-              return (<NavTournament navigator={navigator} title="fourth"/>);
+              return (<NavTournament navigator={navigator} title="fourth" sport={route.sport} loc ={route.loc} team2 = {route.team2}
+                       stats = {route.stats} notes = {route.notes} gender = {route.gender} date = {route.date} time = {route.time}
+                     latitude = {route.latitude} longitude = {route.longitude}/>);
           }
         }
       }

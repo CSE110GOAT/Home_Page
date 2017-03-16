@@ -5,79 +5,117 @@ import {
   Text,
   View,
   ScrollView,
-  Image
+  Image,
+  TouchableOpacity
 } from 'react-native'
 
 
 const TournamentPreview = (props) => {
     return(
-      <View>
-        <View style={styles.container}>
-          <View style={styles.logo_item}>
-            <Image source={require('./basketball.png')} style={styles.logo}/>
-            <Text>{"\t\t"}</Text>
-          </View>
-          <View>
-            <Text style={styles.item}> {props.name}</Text>
-          </View>
-          <View>
-            <Text style={styles.time}>{props.date}</Text>
-          </View>
+
+      <TouchableOpacity activeOpacity={0.5} onPress= {() => {
+      props.navigator.push({
+        id: 'third',
+        sport: props.sport,
+        loc: props.loc,
+        team2: props.team2,
+         date: props.date,
+         time: props.time,
+        score: props.score,
+        recap: props.recap,
+       notes: props.notes,
+       stats: props.stats,
+       latitude: props.latitude,
+       longitude: props.longitude,
+       gender: props.gender
+        })
+      }}>
+
+      <View style={props.gender}>
+        <View>
+          <Text style={styles.item}> {props.team2}  </Text>
+          <Text style={styles.time}>{props.date} {props.time} </Text>
         </View>
       </View>
+
+    </TouchableOpacity>
     )
   }
 
 const styles = StyleSheet.create({
   container: {
+
     backgroundColor: 'white',
+    justifyContent: 'center',
     flexDirection: 'row',
     borderColor: 'grey',
-    borderRightWidth:1,
     borderTopWidth:0,
     borderBottomWidth:0.5,
     borderLeftColor: 'blue',
     borderLeftWidth: 10
   },
-  timeBox:{
-    alignItems: 'stretch',
-    justifyContent: 'center'
+  container2: {
+
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    borderColor: 'grey',
+    borderTopWidth:0,
+    borderBottomWidth:0.5,
+    borderLeftColor: 'gold',
+    borderLeftWidth: 10
   },
+   container3: {
+
+      backgroundColor: 'white',
+      justifyContent: 'center',
+      flexDirection: 'row',
+      borderColor: 'grey',
+      borderTopWidth:0,
+      borderBottomWidth:0.5,
+      borderLeftColor: 'green',
+      borderLeftWidth: 10
+    },
   logo_item:{
     alignItems: 'center'
   },
   item:{
-    fontFamily:"Menlo",
+    fontFamily:"HelveticaNeue-Thin",
     padding: 10,
-    flexDirection:'row',
-    flex:1,
+    borderColor:'grey',
+    borderTopWidth:0,
+    borderBottomWidth:0,
+    borderLeftWidth:0.5,
+    borderRightWidth:0.5,
     justifyContent: 'center',
     alignItems: 'center',
-    height: 62,
-    textAlign:'center',
-    borderColor:'grey',
-    borderLeftWidth:0.5,
-    borderBottomWidth:0,
-    borderRightWidth:0.5,
-    borderTopWidth:0,
-    fontWeight:'bold'
+    textAlign:'center'
   },
-  text:{
-    textAlign: 'center',
+  sport:{
+    fontFamily: 'Didot',
+    backgroundColor: 'gold',
     fontWeight: 'bold',
-    fontSize: 12
+    borderColor: 'navy'
+  },
+  sport_image: {
+    width: 25,
+    height: 50,
+    alignItems: 'center',
+    marginTop: 15
   },
   time: {
-    textAlign: 'center',
     fontSize: 10,
-    fontWeight: 'bold'
-},
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontFamily:"HelveticaNeue-CondensedBold"
+  },
   logo: {
     width: 35,
     height: 35,
     marginTop: 10,
     marginRight:15,
     marginLeft: 15,
+    justifyContent: 'center'
   }
 });
 
