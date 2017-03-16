@@ -109,26 +109,6 @@ navTournament(){
           })
             continue;
           }
-        /*
-         else if(() ){
-            /*
-            this.setState({
-            tournamentGame: this.state.tournamentGame.concat([
-              <TouchableOpacity activeOpacity={1} onPress={this.navTournament.bind(this)}>
-             <View>
-               <TournamentPreview
-                sport = {oneGame[1]}
-                name = {oneGame[2]}
-                date = {oneGame[0]}
-                />
-              </View>
-           </TouchableOpacity>
-            ])
-          })
-
-          continue;
-         }
-         */
           this.setState({
             game: this.state.game.concat([
              <View key = {i}>
@@ -243,7 +223,7 @@ const st = StyleSheet.create({
     borderColor: 'grey',
     borderTopWidth:0,
     borderBottomWidth:0.5,
-    borderLeftColor: 'silver',
+    borderLeftColor: 'grey',
     borderLeftWidth: 10,
   }})
 AppRegistry.registerComponent('MyScene', () => MyScene);
