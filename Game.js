@@ -5,107 +5,77 @@ import {
   Text,
   View,
   ScrollView,
-  Image,
-  ListView,
-  TouchableOpacity
+  Image
 } from 'react-native'
+import Game from './GamePreview'
+import MyScene from './MyScene'
+import Status from './Status'
 
+const Dimensions = require('Dimensions');
+const window = Dimensions.get('window');
 
-const Game = (props) => {
-    return(
+export default class PastGame extends Component{
+    constructor(){
+      super()
 
-      <TouchableOpacity activeOpacity={0.5} onPress= {() => {
-      props.navigator.push({
-        id: 'second',
-        sport: props.sport,
-        loc: props.loc,
-        team2: props.team2,
-         date: props.date,
-         time: props.time,
-        score: props.score,
-        recap: props.recap,
-       notes: props.notes,
-       stats: props.stats,
-       latitude: props.latitude,
-       longitude: props.longitude,
-       gender: props.gender
-        })
-      }}>
-        <View style={props.gender}>
+    }
+    render(){
+    return (
+      <View>
+        <Text style={styles.sport}> {this.props.sport} </Text>
+        <View style={styles.container}>
           <View>
-            <Text style={styles.item}>UCSD{'\t'}vs.{'\t'}{props.team2}  </Text>
-            <Text style={styles.time}>{props.date} {props.time} </Text>
+            <Text style={styles.item}>UCSD {this.props.score} {this.props.team2}</Text>
+            <Text style = {styles.time}> {this.props.date} {this.props.time} </Text>
           </View>
-            </View>
-      </TouchableOpacity>
-    )
-  }
+        </View>
+      </View>
+    )}
+}
 
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
+    justifyContent: 'center',
+    flexDirection: 'row',
     borderColor: 'grey',
-    borderTopWidth:0,
-    borderBottomWidth:0.5,
-    borderLeftColor: 'blue',
-    borderLeftWidth: 10,
-  },
-  container2: {
-    backgroundColor: 'white',
-    borderColor: 'grey',
-    borderTopWidth:0,
-    borderBottomWidth:0.5,
-    borderLeftColor: 'gold',
-    borderLeftWidth: 10,
-  },
-  container3: {
-    backgroundColor: 'white',
-    borderColor: 'grey',
-    borderTopWidth:0,
-    borderBottomWidth:0.5,
-    borderLeftColor: 'green',
-    borderLeftWidth: 10,
+    borderWidth:0.5,
+    width:window.width
   },
   logo_item:{
-    alignItems: 'center',
-    flexDirection:'row',
-    borderRightWidth: 0.5,
-    borderRightColor: 'grey'
+    alignItems: 'center'
   },
   item:{
-    flexDirection: 'row',
-    fontFamily:"HelveticaNeue-Thin",
-    textAlign:'center',
-    fontSize: 16,
-    padding:10
+    fontFamily: 'HelveticaNeue-Thin',
+    padding: 10,
+    borderColor: 'grey',
+    justifyContent: 'center',
+    height: 62,
+   textAlign:'center',
+   fontSize: 24
+
   },
   sport:{
-    flexDirection: 'row',
-    fontFamily:"HelveticaNeue-Thin",
-    textAlign:'center',
-    fontSize: 12,
-    fontWeight: 'bold'
+    fontFamily: 'HelveticaNeue-CondensedBold',
+    backgroundColor: 'gold',
+    borderColor: 'navy',
+    padding: 10,
+    fontSize: 28,
+    textAlign: 'center'
   },
   sport_image: {
     width: 25,
     height: 50,
+    alignItems: 'center',
     marginTop: 15
   },
   time: {
-    fontSize: 10,
-    fontWeight: 'bold',
+    fontSize: 18,
+    fontFamily: 'HelveticaNeue-CondensedBlack',
     textAlign: 'center',
-    fontFamily:"HelveticaNeue-CondensedBold"
-  },
-  logo: {
-    width: 35,
-    height: 35,
-    marginTop: 10,
-    marginLeft: 15,
-    justifyContent: 'center'
+
   }
 });
 
-
-export default Game
+AppRegistry.registerComponent('PastGame', () => PastGame);

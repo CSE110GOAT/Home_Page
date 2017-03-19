@@ -12,7 +12,7 @@ import {
 import Header from './Header'
 import PastGame from './PastGame'
 import NavBar from './NavBar'
-import Game from './Game'
+import GamePreview from './GamePreview'
 import StatusWithoutBoth from './StatusWithoutBoth'
 import StatusWithoutStats from './StatusWithoutStats'
 import StatusWithoutNotes from './StatusWithoutNotes'
